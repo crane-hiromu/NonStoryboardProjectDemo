@@ -8,18 +8,20 @@
 
 import UIKit
 
-class MainContentsViewController: UINavigationController {
+class MainContentsViewController: UIViewController {
     
-    //var addBtn: UIBarButtonItem!
+    var addBtn: UIBarButtonItem!
     
+    // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpScreen();
         
-        ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.white)
+        addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.onClick))
+        self.navigationItem.rightBarButtonItem = addBtn
         
-//        addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.onClick))
-//        self.navigationItem.rightBarButtonItem = addBtn
+        // ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.white)
         
     }
     
@@ -30,9 +32,18 @@ class MainContentsViewController: UINavigationController {
     
     
     func onClick() {
-        
         let viewController = SignUpViewController()
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
+}
+
+// MARK:- Functions
+extension MainContentsViewController {
+    
+    fileprivate func setUpScreen() {
+        title = R.string.localized.nav_title_main()
+        
+    }
+
 }

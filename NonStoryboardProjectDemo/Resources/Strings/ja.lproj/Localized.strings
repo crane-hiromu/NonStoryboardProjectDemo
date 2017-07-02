@@ -6,5 +6,10 @@
   Copyright © 2017年 T.H. All rights reserved.
 */
 
-"tabbar_title_main" = "メイン";
-"tabbar_title_sub" = "サブ";
+/* TabBar */
+"tab_title_main" = "メイン";
+"tab_title_sub" = "サブ";
+
+/* NavigationBar */
+"nav_title_main" = "メイン";
+"nav_title_sub" = "サブ";

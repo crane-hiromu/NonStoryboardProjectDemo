@@ -80,29 +80,51 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localized` struct is generated, and contains static references to 2 localization keys.
+    /// This `R.string.localized` struct is generated, and contains static references to 4 localization keys.
     struct localized {
       /// en translation: main
       /// 
       /// Locales: en, ja
-      static let tabbar_title_main = Rswift.StringResource(key: "tabbar_title_main", tableName: "Localized", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      static let nav_title_main = Rswift.StringResource(key: "nav_title_main", tableName: "Localized", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: main
+      /// 
+      /// Locales: en, ja
+      static let tab_title_main = Rswift.StringResource(key: "tab_title_main", tableName: "Localized", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
       /// en translation: sub
       /// 
       /// Locales: en, ja
-      static let tabbar_title_sub = Rswift.StringResource(key: "tabbar_title_sub", tableName: "Localized", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      static let nav_title_sub = Rswift.StringResource(key: "nav_title_sub", tableName: "Localized", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
+      /// en translation: sub
+      /// 
+      /// Locales: en, ja
+      static let tab_title_sub = Rswift.StringResource(key: "tab_title_sub", tableName: "Localized", bundle: R.hostingBundle, locales: ["en", "ja"], comment: nil)
       
       /// en translation: main
       /// 
       /// Locales: en, ja
-      static func tabbar_title_main(_: Void = ()) -> String {
-        return NSLocalizedString("tabbar_title_main", tableName: "Localized", bundle: R.hostingBundle, comment: "")
+      static func nav_title_main(_: Void = ()) -> String {
+        return NSLocalizedString("nav_title_main", tableName: "Localized", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: main
+      /// 
+      /// Locales: en, ja
+      static func tab_title_main(_: Void = ()) -> String {
+        return NSLocalizedString("tab_title_main", tableName: "Localized", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: sub
       /// 
       /// Locales: en, ja
-      static func tabbar_title_sub(_: Void = ()) -> String {
-        return NSLocalizedString("tabbar_title_sub", tableName: "Localized", bundle: R.hostingBundle, comment: "")
+      static func nav_title_sub(_: Void = ()) -> String {
+        return NSLocalizedString("nav_title_sub", tableName: "Localized", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: sub
+      /// 
+      /// Locales: en, ja
+      static func tab_title_sub(_: Void = ()) -> String {
+        return NSLocalizedString("tab_title_sub", tableName: "Localized", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}

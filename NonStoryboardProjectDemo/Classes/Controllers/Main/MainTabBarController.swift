@@ -8,31 +8,45 @@
 
 import UIKit
 
+// MARK:- Class
 class MainTabBarController: UITabBarController {
+
+    var tabs: [UIViewController] = []
     
-    let mainContentsViewController = MainContentsViewController()
-    let subContentsViewController = SubContentsViewController()
-    
+    // MARK: Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        mainContentsViewController.tabBarItem = UITabBarItem(
-            title: R.string.localized.tabbar_title_main(),
-            image: R.image.tab_bar_home_icon(),
-            tag: 1)
-
-        subContentsViewController.tabBarItem = UITabBarItem(
-            title: R.string.localized.tabbar_title_sub(),
-            image: R.image.tab_bar_search_icon(),
-            tag: 2)
-
-        let mainTabs = [mainContentsViewController, subContentsViewController]
-        setViewControllers(mainTabs, animated: false)
+        
+        setUpToAppendTab(MainContentsViewController(), R.string.localized.tab_title_main(), R.image.tab_bar_home_icon())
+        setUpToAppendTab(SubContentsViewController(), R.string.localized.tab_title_sub(), R.image.tab_bar_home_icon())
+        
+        setViewControllers(tabs, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+
+}
+
+// MARK:- Functions
+extension MainTabBarController {
+    
+    // MARK: Fileprivate Method
+    fileprivate func setUpToAppendTab(
+        _ controller: UIViewController,
+        _ title: String,
+        _ image: UIImage?) {
+        
+        guard let image = image else { return }
+
+        let tagNumber = tabs.count+1 // タグナンバーを自動で設定するために、配列内のコントローラの数を取得しセットしている。
+        controller.tabBarItem = UITabBarItem(title: title, image: image, tag: tagNumber)
+
+        let navigationController = UINavigationController(rootViewController: controller)
+        tabs.append(navigationController)
+
     }
 
 }

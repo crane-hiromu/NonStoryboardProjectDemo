@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SubContentsViewController: UINavigationController {
+class SubContentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUpScreen();
         ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.black)
     }
     
@@ -20,4 +21,14 @@ class SubContentsViewController: UINavigationController {
         super.didReceiveMemoryWarning()
         
     }
+}
+
+// MARK:- Functions
+extension SubContentsViewController {
+    
+    fileprivate func setUpScreen() {
+        //title = R.string.localized.nav_title_sub()
+        title = "sub"
+    }
+
 }
