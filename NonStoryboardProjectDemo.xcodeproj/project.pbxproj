@@ -10,6 +10,9 @@
 		78DE2FD956D0F327ED3139CA /* libPods-NonStoryboardProjectDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A73159C43B6965876D3C9DB9 /* libPods-NonStoryboardProjectDemoTests.a */; };
 		C6E33885EF0B3D3904BBA0BC /* Pods_NonStoryboardProjectDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7AEFAF60C239F1D30D3924 /* Pods_NonStoryboardProjectDemo.framework */; };
 		D67B1F26F9253526656A8C12 /* libPods-NonStoryboardProjectDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6BFCDCE0C695F832D1F6A5 /* libPods-NonStoryboardProjectDemoUITests.a */; };
+		EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
+		EC1CDBCD1F08DEEA00E1855C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
+		EC1CDBCE1F08DEEA00E1855C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
 		EC3D63091F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
 		EC3D630A1F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
@@ -77,14 +80,15 @@
 		A73159C43B6965876D3C9DB9 /* libPods-NonStoryboardProjectDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NonStoryboardProjectDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7AEFAF60C239F1D30D3924 /* Pods_NonStoryboardProjectDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NonStoryboardProjectDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D64A7037BD50711F03D330A9 /* Pods-NonStoryboardProjectDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NonStoryboardProjectDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NonStoryboardProjectDemoTests/Pods-NonStoryboardProjectDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC3D63071F08CF3A00728540 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ../MainTabBarController.swift; sourceTree = "<group>"; };
-		EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContentsViewController.swift; path = MainContents/MainContentsViewController.swift; sourceTree = "<group>"; };
-		EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubContentsViewController.swift; path = SubContents/SubContentsViewController.swift; sourceTree = "<group>"; };
+		EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		EC3D63071F08CF3A00728540 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainContentsViewController.swift; path = MainContentsViewController.swift; sourceTree = "<group>"; };
+		EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubContentsViewController.swift; path = SubContentsViewController.swift; sourceTree = "<group>"; };
 		EC3D63151F08CF8E00728540 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		EC3D631D1F08CFC700728540 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorType.swift; path = NonStoryboardProjectDemo/Classes/Models/Enums/ColorType.swift; sourceTree = SOURCE_ROOT; };
-		EC3D63211F08CFD300728540 /* UIColor+HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HEX.swift"; path = "NonStoryboardProjectDemo/Classes/Models/Extensions/UIColor+HEX.swift"; sourceTree = SOURCE_ROOT; };
-		EC3D63251F08CFD900728540 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = NonStoryboardProjectDemo/Classes/Models/Utils/ColorUtils.swift; sourceTree = SOURCE_ROOT; };
-		EC3D63261F08CFD900728540 /* StaticUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticUtils.swift; path = NonStoryboardProjectDemo/Classes/Models/Utils/StaticUtils.swift; sourceTree = SOURCE_ROOT; };
+		EC3D631D1F08CFC700728540 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorType.swift; path = ColorType.swift; sourceTree = "<group>"; };
+		EC3D63211F08CFD300728540 /* UIColor+HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+HEX.swift"; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
+		EC3D63251F08CFD900728540 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		EC3D63261F08CFD900728540 /* StaticUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticUtils.swift; path = StaticUtils.swift; sourceTree = "<group>"; };
 		EC3D63351F08D3E100728540 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		EC3D63371F08D3E900728540 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localized.strings; sourceTree = "<group>"; };
 		EC3D63381F08D5A500728540 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -192,8 +196,8 @@
 		EC3D63011F08CCA200728540 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D630C1F08CF4900728540 /* SubContents */,
 				EC3D630B1F08CF4100728540 /* MainContents */,
+				EC3D630C1F08CF4900728540 /* SubContents */,
 				EC3D63071F08CF3A00728540 /* MainTabBarController.swift */,
 			);
 			path = Main;
@@ -220,7 +224,7 @@
 				EC3D631D1F08CFC700728540 /* ColorType.swift */,
 			);
 			name = Enums;
-			path = ../Controllers/Main/Enums;
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		EC3D63051F08CCD500728540 /* Extensions */ = {
@@ -229,7 +233,7 @@
 				EC3D63211F08CFD300728540 /* UIColor+HEX.swift */,
 			);
 			name = Extensions;
-			path = ../Controllers/Main/Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EC3D63061F08CCDC00728540 /* Utils */ = {
@@ -239,7 +243,7 @@
 				EC3D63261F08CFD900728540 /* StaticUtils.swift */,
 			);
 			name = Utils;
-			path = ../Controllers/Main/Utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		EC3D630B1F08CF4100728540 /* MainContents */ = {
@@ -248,6 +252,7 @@
 				EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */,
 			);
 			name = MainContents;
+			path = MainContents;
 			sourceTree = "<group>";
 		};
 		EC3D630C1F08CF4900728540 /* SubContents */ = {
@@ -256,6 +261,7 @@
 				EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */,
 			);
 			name = SubContents;
+			path = SubContents;
 			sourceTree = "<group>";
 		};
 		ECB21A3F1F08B78700A03543 = {
@@ -267,6 +273,7 @@
 				ECB21A6A1F08B78700A03543 /* NonStoryboardProjectDemoUITests */,
 				272D5173C41D583ADD491D6D /* Pods */,
 				ECB21A491F08B78700A03543 /* Products */,
+				EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,9 +317,9 @@
 		ECB21A791F08B79B00A03543 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ECB21A4B1F08B78700A03543 /* AppDelegate.swift */,
 				ECB21A7B1F08B81800A03543 /* Controllers */,
 				EC3D62FF1F08CBE300728540 /* Models */,
+				ECB21A4B1F08B78700A03543 /* AppDelegate.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -351,6 +358,7 @@
 				89B46CFB017201CC63434101 /* [CP] Embed Pods Frameworks */,
 				FAF1A3A656C9B73F6E3605C0 /* [CP] Copy Pods Resources */,
 				EC3D632D1F08D36C00728540 /* ShellScript */,
+				EC1CDBCA1F08DD2E00E1855C /* Run Script Rswift */,
 			);
 			buildRules = (
 			);
@@ -587,6 +595,20 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		EC1CDBCA1F08DD2E00E1855C /* Run Script Rswift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script Rswift";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT/rswift\" \"$SRCROOT\"";
+		};
 		EC3D632D1F08D36C00728540 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,6 +673,7 @@
 				EC3D63271F08CFD900728540 /* ColorUtils.swift in Sources */,
 				EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D630E1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */,
 				ECB21A4C1F08B78700A03543 /* AppDelegate.swift in Sources */,
 				EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */,
 			);
@@ -667,6 +690,7 @@
 				EC3D63281F08CFD900728540 /* ColorUtils.swift in Sources */,
 				EC3D63131F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D630F1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC1CDBCD1F08DEEA00E1855C /* R.generated.swift in Sources */,
 				ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */,
 				EC3D63171F08CF8E00728540 /* SignUpViewController.swift in Sources */,
 			);
@@ -683,6 +707,7 @@
 				EC3D63291F08CFD900728540 /* ColorUtils.swift in Sources */,
 				EC3D63141F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D63101F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC1CDBCE1F08DEEA00E1855C /* R.generated.swift in Sources */,
 				ECB21A6C1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift in Sources */,
 				EC3D63181F08CF8E00728540 /* SignUpViewController.swift in Sources */,
 			);
@@ -711,6 +736,7 @@
 				EC3D63371F08D3E900728540 /* ja */,
 			);
 			name = Localized.strings;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
