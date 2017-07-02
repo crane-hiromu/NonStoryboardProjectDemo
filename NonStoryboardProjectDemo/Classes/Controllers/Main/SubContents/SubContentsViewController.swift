@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubContentsViewController: UIViewController {
+class SubContentsViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

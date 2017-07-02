@@ -8,12 +8,13 @@
 
 import UIKit
 
-class MainContentsViewController: UIViewController {
+class MainContentsViewController: UINavigationController {
     
     //var addBtn: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.white)
         

@@ -26,9 +26,6 @@ class MainTabBarController: UITabBarController {
             image: R.image.tab_bar_search_icon(),
             tag: 2)
 
-//        mainContentsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
-//        subContentsViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 2)
-
         let mainTabs = [mainContentsViewController, subContentsViewController]
         setViewControllers(mainTabs, animated: false)
     }

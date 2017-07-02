@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let viewController = MainTabBarController()
         self.window = UIWindow(frame: StaticUtils.SCREEN_SIZE)
-        self.window?.rootViewController = UINavigationController(rootViewController: viewController)
+        self.window?.rootViewController = viewController
+        //self.window?.rootViewController = UINavigationController(rootViewController: viewController)
         self.window?.makeKeyAndVisible()
         
         return true
