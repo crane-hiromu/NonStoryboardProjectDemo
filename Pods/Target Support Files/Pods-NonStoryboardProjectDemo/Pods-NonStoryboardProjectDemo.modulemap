@@ -1,0 +1,6 @@
+framework module Pods_NonStoryboardProjectDemo {
+  umbrella header "Pods-NonStoryboardProjectDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

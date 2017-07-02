@@ -1,0 +1,7 @@
+github "Alamofire/Alamofire"
+github "SwiftyJSON/SwiftyJSON"
+github "realm/realm-cocoa"
+github "mac-cain13/R.swift.Library"
+github "Alamofire/AlamofireImage"
+github "ReactiveX/RxSwift"
+github "SVProgressHUD/SVProgressHUD"
