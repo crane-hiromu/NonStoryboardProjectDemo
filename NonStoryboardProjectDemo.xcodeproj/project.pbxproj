@@ -51,6 +51,9 @@
 		ECB21A6C1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */; };
 		ECB690031F08EE5100192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690041F08EE5200192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
+		ECB690071F0916B700192BBF /* UIViewController+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewController+Function.swift */; };
+		ECB690081F0916B700192BBF /* UIViewController+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewController+Function.swift */; };
+		ECB690091F0916B700192BBF /* UIViewController+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewController+Function.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,7 @@
 		ECB21A671F08B78700A03543 /* NonStoryboardProjectDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonStoryboardProjectDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonStoryboardProjectDemoUITests.swift; sourceTree = "<group>"; };
 		ECB21A6D1F08B78700A03543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECB690061F0916B700192BBF /* UIViewController+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Function.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				EC3D63211F08CFD300728540 /* UIColor+HEX.swift */,
+				ECB690061F0916B700192BBF /* UIViewController+Function.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -661,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB690071F0916B700192BBF /* UIViewController+Function.swift in Sources */,
 				EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632A1F08CFD900728540 /* StaticUtils.swift in Sources */,
 				EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */,
@@ -678,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB690081F0916B700192BBF /* UIViewController+Function.swift in Sources */,
 				EC3D63231F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632B1F08CFD900728540 /* StaticUtils.swift in Sources */,
 				EC3D63091F08CF3A00728540 /* MainTabBarController.swift in Sources */,
@@ -695,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB690091F0916B700192BBF /* UIViewController+Function.swift in Sources */,
 				EC3D63241F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632C1F08CFD900728540 /* StaticUtils.swift in Sources */,
 				EC3D630A1F08CF3A00728540 /* MainTabBarController.swift in Sources */,

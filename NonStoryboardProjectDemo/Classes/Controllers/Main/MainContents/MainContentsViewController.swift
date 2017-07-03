@@ -8,21 +8,16 @@
 
 import UIKit
 
+// MARK: - Class
 class MainContentsViewController: UIViewController {
-    
-    var addBtn: UIBarButtonItem!
-    
-    // MARK: Override
+
+    // MARK: Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpScreen();
-        
-        addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.onClick))
-        self.navigationItem.rightBarButtonItem = addBtn
+        setUpNavigationBar();
         
         // ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.white)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,20 +25,28 @@ class MainContentsViewController: UIViewController {
 
     }
     
-    
-    func onClick() {
-        let viewController = SignUpViewController()
-        self.navigationController?.pushViewController(viewController, animated: true)
-    }
-    
 }
 
-// MARK:- Functions
+// MARK: - Functions
 extension MainContentsViewController {
     
-    fileprivate func setUpScreen() {
+    // MARK: Internal Method
+    func showNextView() {
+        //ただの画面遷移だけの場合
+        //        let viewController = SignUpViewController()
+        //        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        let viewController = SignUpViewController()
+        let modalView = UINavigationController(rootViewController: viewController)
+        modalView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        present(modalView, animated: true, completion: nil)
+    }
+    
+    // MARK: Fileprivate Method
+    fileprivate func setUpNavigationBar() {
         title = R.string.localized.nav_title_main()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.showNextView))
     }
 
 }

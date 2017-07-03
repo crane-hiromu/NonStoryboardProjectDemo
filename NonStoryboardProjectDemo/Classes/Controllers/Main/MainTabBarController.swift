@@ -8,10 +8,10 @@
 
 import UIKit
 
-// MARK:- Class
+// MARK: - Class
 class MainTabBarController: UITabBarController {
 
-    var tabs: [UIViewController] = []
+    fileprivate var tabs: [UIViewController] = []
     
     // MARK: Override Method
     override func viewDidLoad() {
@@ -30,18 +30,14 @@ class MainTabBarController: UITabBarController {
 
 }
 
-// MARK:- Functions
+// MARK: - Functions
 extension MainTabBarController {
     
     // MARK: Fileprivate Method
-    fileprivate func setUpToAppendTab(
-        _ controller: UIViewController,
-        _ title: String,
-        _ image: UIImage?) {
-        
+    fileprivate func setUpToAppendTab(_ controller: UIViewController, _ title: String, _ image: UIImage?) {
         guard let image = image else { return }
 
-        let tagNumber = tabs.count+1 // タグナンバーを自動で設定するために、配列内のコントローラの数を取得しセットしている。
+        let tagNumber = tabs.count+1 // タグナンバーを自動で設定するために、配列内のコントローラの数を取得している。
         controller.tabBarItem = UITabBarItem(title: title, image: image, tag: tagNumber)
 
         let navigationController = UINavigationController(rootViewController: controller)

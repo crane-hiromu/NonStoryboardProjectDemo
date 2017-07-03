@@ -8,8 +8,10 @@
 
 import UIKit
 
+// MARK: - Class
 class SubContentsViewController: UIViewController {
     
+    // MARK: Override Method
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,12 +25,11 @@ class SubContentsViewController: UIViewController {
     }
 }
 
-// MARK:- Functions
+// MARK: - Functions
 extension SubContentsViewController {
     
     fileprivate func setUpScreen() {
-        //title = R.string.localized.nav_title_sub()
-        title = "sub"
+        title = R.string.localized.nav_title_sub()
     }
 
 }
