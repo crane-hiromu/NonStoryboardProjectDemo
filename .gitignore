@@ -28,10 +28,12 @@ xcuserdata/
 
 # Swift Package Manager
 .build/
+R.generated.swift
 
 # CocoaPods
 Pods/
 
 # Carthage
+Carthage/
 Carthage/Checkouts
 Carthage/Build
