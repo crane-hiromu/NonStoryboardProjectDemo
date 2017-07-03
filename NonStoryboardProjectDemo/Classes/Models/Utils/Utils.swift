@@ -1,5 +1,5 @@
 //
-//  StaticUtils.swift
+//  Utils.swift
 //  NonStoryboardProject
 //
 //  Created by T.H on 2017/07/01.
@@ -8,10 +8,14 @@
 
 import UIKit
 
-struct StaticUtils {
+enum Utils {
     
     static let SCREEN_SIZE = UIScreen.main.bounds
-
     static let UNIQUE_ID = UUID().uuidString
+    
+    enum Color {
+        static let main = UIColor(hex: 0xF7941E)
+    }
+
     
 }

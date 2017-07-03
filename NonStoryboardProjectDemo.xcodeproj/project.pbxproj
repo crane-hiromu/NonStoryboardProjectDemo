@@ -23,18 +23,15 @@
 		EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
 		EC3D63171F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
 		EC3D63181F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
-		EC3D631E1F08CFC700728540 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D631D1F08CFC700728540 /* ColorType.swift */; };
-		EC3D631F1F08CFC700728540 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D631D1F08CFC700728540 /* ColorType.swift */; };
-		EC3D63201F08CFC700728540 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D631D1F08CFC700728540 /* ColorType.swift */; };
 		EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
 		EC3D63231F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
 		EC3D63241F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
-		EC3D63271F08CFD900728540 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ColorUtils.swift */; };
-		EC3D63281F08CFD900728540 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ColorUtils.swift */; };
-		EC3D63291F08CFD900728540 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ColorUtils.swift */; };
-		EC3D632A1F08CFD900728540 /* StaticUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* StaticUtils.swift */; };
-		EC3D632B1F08CFD900728540 /* StaticUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* StaticUtils.swift */; };
-		EC3D632C1F08CFD900728540 /* StaticUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* StaticUtils.swift */; };
+		EC3D63271F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
+		EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
+		EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
+		EC3D632A1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
+		EC3D632B1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
+		EC3D632C1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
 		EC3D63321F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
 		EC3D63331F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
 		EC3D63341F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
@@ -88,10 +85,9 @@
 		EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentsViewController.swift; sourceTree = "<group>"; };
 		EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubContentsViewController.swift; sourceTree = "<group>"; };
 		EC3D63151F08CF8E00728540 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		EC3D631D1F08CFC700728540 /* ColorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
 		EC3D63211F08CFD300728540 /* UIColor+HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
-		EC3D63251F08CFD900728540 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
-		EC3D63261F08CFD900728540 /* StaticUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticUtils.swift; sourceTree = "<group>"; };
+		EC3D63251F08CFD900728540 /* ViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHelpers.swift; sourceTree = "<group>"; };
+		EC3D63261F08CFD900728540 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils/Utils.swift; sourceTree = "<group>"; };
 		EC3D63351F08D3E100728540 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		EC3D63371F08D3E900728540 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localized.strings; sourceTree = "<group>"; };
 		EC3D63381F08D5A500728540 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -182,9 +178,9 @@
 		EC3D62FF1F08CBE300728540 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D63041F08CCC700728540 /* Enums */,
 				EC3D63051F08CCD500728540 /* Extensions */,
-				EC3D63061F08CCDC00728540 /* Utils */,
+				EC3D63041F08CCC700728540 /* Enums */,
+				EC3D63061F08CCDC00728540 /* Helpers */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,7 +221,7 @@
 		EC3D63041F08CCC700728540 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D631D1F08CFC700728540 /* ColorType.swift */,
+				EC3D63261F08CFD900728540 /* Utils.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -239,12 +235,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		EC3D63061F08CCDC00728540 /* Utils */ = {
+		EC3D63061F08CCDC00728540 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D63251F08CFD900728540 /* ColorUtils.swift */,
-				EC3D63261F08CFD900728540 /* StaticUtils.swift */,
+				EC3D63251F08CFD900728540 /* ViewHelpers.swift */,
 			);
+			name = Helpers;
 			path = Utils;
 			sourceTree = "<group>";
 		};
@@ -262,6 +258,13 @@
 				EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */,
 			);
 			path = SubContents;
+			sourceTree = "<group>";
+		};
+		EC790CBC1F0A8CD800538702 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		ECB21A3F1F08B78700A03543 = {
@@ -318,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				ECB21A7B1F08B81800A03543 /* Controllers */,
+				EC790CBC1F0A8CD800538702 /* Views */,
 				EC3D62FF1F08CBE300728540 /* Models */,
 				ECB21A4B1F08B78700A03543 /* AppDelegate.swift */,
 			);
@@ -668,10 +672,9 @@
 			files = (
 				ECB690071F0916B700192BBF /* UIViewController+Function.swift in Sources */,
 				EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */,
-				EC3D632A1F08CFD900728540 /* StaticUtils.swift in Sources */,
+				EC3D632A1F08CFD900728540 /* Utils.swift in Sources */,
 				EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */,
-				EC3D631E1F08CFC700728540 /* ColorType.swift in Sources */,
-				EC3D63271F08CFD900728540 /* ColorUtils.swift in Sources */,
+				EC3D63271F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D630E1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
 				EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */,
@@ -686,10 +689,9 @@
 			files = (
 				ECB690081F0916B700192BBF /* UIViewController+Function.swift in Sources */,
 				EC3D63231F08CFD300728540 /* UIColor+HEX.swift in Sources */,
-				EC3D632B1F08CFD900728540 /* StaticUtils.swift in Sources */,
+				EC3D632B1F08CFD900728540 /* Utils.swift in Sources */,
 				EC3D63091F08CF3A00728540 /* MainTabBarController.swift in Sources */,
-				EC3D631F1F08CFC700728540 /* ColorType.swift in Sources */,
-				EC3D63281F08CFD900728540 /* ColorUtils.swift in Sources */,
+				EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63131F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D630F1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
 				ECB690031F08EE5100192BBF /* R.generated.swift in Sources */,
@@ -704,10 +706,9 @@
 			files = (
 				ECB690091F0916B700192BBF /* UIViewController+Function.swift in Sources */,
 				EC3D63241F08CFD300728540 /* UIColor+HEX.swift in Sources */,
-				EC3D632C1F08CFD900728540 /* StaticUtils.swift in Sources */,
+				EC3D632C1F08CFD900728540 /* Utils.swift in Sources */,
 				EC3D630A1F08CF3A00728540 /* MainTabBarController.swift in Sources */,
-				EC3D63201F08CFC700728540 /* ColorType.swift in Sources */,
-				EC3D63291F08CFD900728540 /* ColorUtils.swift in Sources */,
+				EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63141F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D63101F08CF5500728540 /* MainContentsViewController.swift in Sources */,
 				ECB690041F08EE5200192BBF /* R.generated.swift in Sources */,

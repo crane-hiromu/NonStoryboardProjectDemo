@@ -16,8 +16,6 @@ class MainContentsViewController: UIViewController {
         super.viewDidLoad()
         
         setUpNavigationBar();
-        
-        // ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.white)
     }
     
     override func didReceiveMemoryWarning() {

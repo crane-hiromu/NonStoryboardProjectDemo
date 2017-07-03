@@ -16,7 +16,7 @@ class SubContentsViewController: UIViewController {
         super.viewDidLoad()
         
         setUpScreen();
-        ColorUtils().setBackground(view, top: ColorType.main.display, bottom: UIColor.black)
+        ViewHelpers().setBackgroundColor(view, top: Utils.Color.main, bottom: UIColor.black)
     }
     
     override func didReceiveMemoryWarning() {

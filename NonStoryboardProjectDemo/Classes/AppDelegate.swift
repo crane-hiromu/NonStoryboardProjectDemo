@@ -13,14 +13,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let viewController = MainTabBarController()
-        self.window = UIWindow(frame: StaticUtils.SCREEN_SIZE)
-        self.window?.rootViewController = viewController
-        //self.window?.rootViewController = UINavigationController(rootViewController: viewController)
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(frame: Utils.SCREEN_SIZE)
+
+        if let window = window {
+            window.rootViewController = MainTabBarController()
+            window.makeKeyAndVisible()
+        }
         
         return true
     }
