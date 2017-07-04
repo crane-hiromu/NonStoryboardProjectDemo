@@ -8,5 +8,6 @@
 
 //MARK: - Protcol
 protocol UIViewControllerProtcol {
-    func setUpScreen()
+    func setUpNavigationBar()
+    func setUpViewItems()
 }

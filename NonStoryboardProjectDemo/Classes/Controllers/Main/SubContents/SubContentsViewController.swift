@@ -15,7 +15,9 @@ class SubContentsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpScreen();
+        setUpNavigationBar()
+        setUpViewItems()
+
         ViewHelpers().setBackgroundColor(view, top: Utils.Color.main, bottom: UIColor.black)
     }
     
@@ -28,12 +30,17 @@ class SubContentsViewController: UIViewController {
 // MARK: - UIViewControllerProtcol
 extension SubContentsViewController: UIViewControllerProtcol {
     
-    // MARK: Internal Method
-    func setUpScreen() {
-        title = R.string.localized.nav_title_sub()
+    // MARK: Internal Protcol Methods
+    func setUpNavigationBar() {
+        navigationItem.title = R.string.localized.nav_title_sub()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.showNextView))
     }
+    
+    func setUpViewItems() {
+    
+    }
 
+    // MARK: - Selector Methods
     func showNextView() {
         //ただの画面遷移だけの場合
         //        let viewController = SignUpViewController()

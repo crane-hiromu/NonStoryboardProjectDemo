@@ -12,29 +12,15 @@
 		D67B1F26F9253526656A8C12 /* libPods-NonStoryboardProjectDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6BFCDCE0C695F832D1F6A5 /* libPods-NonStoryboardProjectDemoUITests.a */; };
 		EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
-		EC3D63091F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
-		EC3D630A1F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
 		EC3D630E1F08CF5500728540 /* MainContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */; };
-		EC3D630F1F08CF5500728540 /* MainContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */; };
-		EC3D63101F08CF5500728540 /* MainContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */; };
 		EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */; };
-		EC3D63131F08CF5E00728540 /* SubContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */; };
-		EC3D63141F08CF5E00728540 /* SubContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */; };
 		EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
-		EC3D63171F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
-		EC3D63181F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
 		EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
-		EC3D63231F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
-		EC3D63241F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
 		EC3D63271F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
 		EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
 		EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
 		EC3D632A1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
-		EC3D632B1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
-		EC3D632C1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
 		EC3D63321F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
-		EC3D63331F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
-		EC3D63341F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
 		EC3D63391F08D5A500728540 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63381F08D5A500728540 /* Realm.framework */; };
 		EC3D633B1F08D5A800728540 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D633A1F08D5A800728540 /* RealmSwift.framework */; };
 		EC3D633D1F08D5AD00728540 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D633C1F08D5AD00728540 /* Rswift.framework */; };
@@ -43,8 +29,6 @@
 		EC3D63431F08D5C400728540 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63421F08D5C400728540 /* SVProgressHUD.framework */; };
 		EC3D63451F08D5CD00728540 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63441F08D5CD00728540 /* SwiftyJSON.framework */; };
 		EC43E3F21F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
-		EC43E3F31F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
-		EC43E3F41F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
 		ECB21A4C1F08B78700A03543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A4B1F08B78700A03543 /* AppDelegate.swift */; };
 		ECB21A531F08B78700A03543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB21A521F08B78700A03543 /* Assets.xcassets */; };
 		ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A601F08B78700A03543 /* NonStoryboardProjectDemoTests.swift */; };
@@ -52,8 +36,6 @@
 		ECB690031F08EE5100192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690041F08EE5200192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690071F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
-		ECB690081F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
-		ECB690091F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -500,7 +482,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3D63331F08D3E100728540 /* Localized.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +489,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3D63341F08D3E100728540 /* Localized.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,17 +689,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB690081F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */,
-				EC3D63231F08CFD300728540 /* UIColor+HEX.swift in Sources */,
-				EC3D632B1F08CFD900728540 /* Utils.swift in Sources */,
-				EC3D63091F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */,
-				EC3D63131F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
-				EC3D630F1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
-				EC43E3F31F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,
 				ECB690031F08EE5100192BBF /* R.generated.swift in Sources */,
 				ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */,
-				EC3D63171F08CF8E00728540 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,17 +699,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB690091F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */,
-				EC3D63241F08CFD300728540 /* UIColor+HEX.swift in Sources */,
-				EC3D632C1F08CFD900728540 /* Utils.swift in Sources */,
-				EC3D630A1F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */,
-				EC3D63141F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
-				EC3D63101F08CF5500728540 /* MainContentsViewController.swift in Sources */,
-				EC43E3F41F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,
 				ECB690041F08EE5200192BBF /* R.generated.swift in Sources */,
 				ECB21A6C1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift in Sources */,
-				EC3D63181F08CF8E00728540 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@ import UIKit
 // MARK: - Class
 class MainTabBarController: UITabBarController {
 
+    // MARK: Fileprivate Instances
     fileprivate var tabs: [UIViewController] = []
     
     // MARK: Override Methods

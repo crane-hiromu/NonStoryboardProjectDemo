@@ -8,13 +8,7 @@
 
 import UIKit
 
-final class ViewHelpers {
-    
-    func createUIView() -> UIView {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }
+struct ViewHelpers {
 
     /// ２色を指定すると、１色目から２色目へ、上から下のグラデーションが付く
     /// - parameter view: 対象のView
