@@ -13,3 +13,5 @@
 /* NavigationBar */
 "nav_title_main" = "main";
 "nav_title_sub" = "sub";
+"nav_title_signup" = "SignUp";
+"nav_title_signin" = "SignIn";

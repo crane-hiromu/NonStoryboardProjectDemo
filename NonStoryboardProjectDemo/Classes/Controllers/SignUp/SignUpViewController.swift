@@ -11,12 +11,43 @@ import UIKit
 // MARK: - Class
 class SignUpViewController: UIViewController {
     
-    // MARK: Fileprivate Instance
-    fileprivate let hoge = UILabel()
-    fileprivate let piyo = UITextField()
-    fileprivate let btn = UIButton()
+    // MARK: Fileprivate ViewItems
+    fileprivate var hoge: UILabel! {
+        didSet {
+            hoge.text = "Hello Mochi!"
+            view.addSubview(hoge)
+            
+            hoge.translatesAutoresizingMaskIntoConstraints = false
+            hoge.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.8).isActive = true
+            hoge.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
+            hoge.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        }
+    }
+
+    fileprivate var piyo: UITextField! {
+        didSet {
+            piyo.frame = CGRect(x:100, y:200, width:200, height:50)
+            piyo.layer.position = CGPoint(x: 200, y: 150)
+            piyo.borderStyle = UITextBorderStyle.roundedRect
+            piyo.delegate = self
+            view.addSubview(piyo)
+        }
+    }
+
+    fileprivate var btn: UIButton! {
+        didSet {
+            btn.frame = CGRect(x:100 , y:100, width:200, height:30)
+            btn.setTitle("push", for: UIControlState.normal)
+            btn.backgroundColor = UIColor.red
+            btn.layer.position = CGPoint(x: 200, y: 200)
+            btn.layer.cornerRadius = 8
+            btn.addTarget(self, action: #selector(self.onClickBtn), for: UIControlEvents.touchUpInside)
+            view.addSubview(btn)
+        }
+    }
     
-    // MARK: Override Method
+    
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,59 +61,56 @@ class SignUpViewController: UIViewController {
 
 }
 
-// MARK: - Functions
-extension SignUpViewController {
+// MARK: - UIViewControllerProtcol
+extension SignUpViewController: UIViewControllerProtcol {
 
-    // MARK: Fileprivate Method
-    fileprivate func setUpScreen() {
-        // label
-        
-        hoge.frame = CGRect(x:100, y:100, width:200, height:200)
-        hoge.text = "Hello Mochi!"
-        hoge.layer.position = CGPoint(x: 200, y: 100)
-        self.view.addSubview(hoge)
-        
-        // text field
-        
-        piyo.frame = CGRect(x:100, y:200, width:200, height:50)
-        piyo.layer.position = CGPoint(x: 200, y: 150)
-        piyo.borderStyle = UITextBorderStyle.roundedRect
-        piyo.delegate = self
-        self.view.addSubview(piyo)
-        
-        // button
-        
-        btn.frame = CGRect(x:100 , y:100, width:200, height:30)
-        btn.setTitle("push", for: UIControlState.normal)
-        btn.backgroundColor = UIColor.red
-        btn.layer.position = CGPoint(x: 200, y: 200)
-        btn.layer.cornerRadius = 8
-        btn.addTarget(self, action: #selector(self.onClickBtn), for: UIControlEvents.touchUpInside)
-        self.view.addSubview(btn)
-        
-        let view = UIView()
-        let leadingConstraint = blueView.leadingAnchor.constraintEqualToAnchor(self.view.leadingAnchor,
-                                                                               constant: 30.0)
-        leadingConstraint.active = true
+    // MARK: Internal Methods
+    func setUpScreen() {
+
+        setUpNavigationBar()
+        setUpItems()
         
         ViewHelpers().setBackgroundColor(view, top: Utils.Color.main, bottom: UIColor.white)
     }
-
     
-    func onClickBtn() {
-        print("test成功")
-        hoge.text = "test成功"
+    // MARK: Private Methods
+    private func setUpNavigationBar() {
+        title = R.string.localized.nav_title_signup()
+        navigationItem.leftBarButtonItem = CustomBarButtonItem().setClose(self, selector: #selector(self.dismissModalView))
     }
+    
+    private func setUpItems() {
+        hoge = UILabel()
+        piyo = UITextField()
+        btn = UIButton()
+    }
+    
+
 
 }
 
-//MARK:- TextFieldDelegate
+// MARK:- TextFieldDelegate
 extension SignUpViewController: UITextFieldDelegate {
 
     // キーボードを押し下げる処理
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
+        return textField.isFirstResponder
     }
 
 }
+
+// MARK: - Functions
+extension SignUpViewController {
+
+    // MARK: Internal Methods
+    func onClickBtn() {
+        print("test成功")
+        hoge.text = "test成功"
+    }
+    
+    func dismissModalView() {
+        dismiss(animated: true, completion: nil)
+    }
+
+}
+

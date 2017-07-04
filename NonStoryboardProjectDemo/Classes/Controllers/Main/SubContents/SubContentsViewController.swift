@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Class
 class SubContentsViewController: UIViewController {
     
-    // MARK: Override Method
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,11 +25,24 @@ class SubContentsViewController: UIViewController {
     }
 }
 
-// MARK: - Functions
-extension SubContentsViewController {
+// MARK: - UIViewControllerProtcol
+extension SubContentsViewController: UIViewControllerProtcol {
     
-    fileprivate func setUpScreen() {
+    // MARK: Internal Method
+    func setUpScreen() {
         title = R.string.localized.nav_title_sub()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.showNextView))
+    }
+
+    func showNextView() {
+        //ただの画面遷移だけの場合
+        //        let viewController = SignUpViewController()
+        //        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        let viewController = SignUpViewController()
+        let modalView = UINavigationController(rootViewController: viewController)
+        modalView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        present(modalView, animated: true, completion: nil)
     }
 
 }

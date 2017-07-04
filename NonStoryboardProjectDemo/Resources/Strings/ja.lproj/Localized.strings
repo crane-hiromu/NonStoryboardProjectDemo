@@ -13,3 +13,5 @@
 /* NavigationBar */
 "nav_title_main" = "メイン";
 "nav_title_sub" = "サブ";
+"nav_title_signup" = "サインアップ";
+"nav_title_signin" = "サインイン";

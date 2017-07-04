@@ -13,7 +13,7 @@ class MainTabBarController: UITabBarController {
 
     fileprivate var tabs: [UIViewController] = []
     
-    // MARK: Override Method
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,7 +33,7 @@ class MainTabBarController: UITabBarController {
 // MARK: - Functions
 extension MainTabBarController {
     
-    // MARK: Fileprivate Method
+    // MARK: Fileprivate Methods
     fileprivate func setUpToAppendTab(_ controller: UIViewController, _ title: String, _ image: UIImage?) {
         guard let image = image else { return }
 

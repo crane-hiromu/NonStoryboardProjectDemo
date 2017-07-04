@@ -11,11 +11,11 @@ import UIKit
 // MARK: - Class
 class MainContentsViewController: UIViewController {
 
-    // MARK: Override Method
+    // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpNavigationBar();
+        setUpScreen();
     }
     
     override func didReceiveMemoryWarning() {
@@ -25,26 +25,66 @@ class MainContentsViewController: UIViewController {
     
 }
 
-// MARK: - Functions
-extension MainContentsViewController {
-    
-    // MARK: Internal Method
-    func showNextView() {
-        //ただの画面遷移だけの場合
-        //        let viewController = SignUpViewController()
-        //        self.navigationController?.pushViewController(viewController, animated: true)
-        
-        let viewController = SignUpViewController()
-        let modalView = UINavigationController(rootViewController: viewController)
-        modalView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        present(modalView, animated: true, completion: nil)
-    }
-    
-    // MARK: Fileprivate Method
-    fileprivate func setUpNavigationBar() {
+// MARK: - UIViewControllerProtcol
+extension MainContentsViewController: UIViewControllerProtcol {
+
+    // MARK: Internal Methods
+    func setUpScreen() {
         title = R.string.localized.nav_title_main()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.showNextView))
+        if(navigationItem(rawValue: .location)) {
+            print("t")
+        } else {
+            print("f")
+        }
+        navigationItem.rightBarButtonItem = CustomBarButtonItem().set(image: .locationIcon, self, selector: .showLocationView)
+        
     }
+    
+    func showLocationView() {
+    
+    }
+    
+    func showPhotoView() {
+        
+    }
+    
+    
 
 }
+
+
+// MARK: - NavigationItem Fileprivate Enum
+fileprivate enum NavBarButtonItem {
+    case location
+    case photo
+
+    var display: UIImage {
+        switch self {
+        case .location: return R.image.nav_location_icon()!
+        case .photo: return R.image.nav_photo_icon()!
+        }
+    }
+
+    var action: Selector {
+        switch self {
+        case .location: return #selector(MainContentsViewController.showLocationView)
+        case .photo: return #selector(MainContentsViewController.showPhotoView)
+        }
+    }
+}
+
+
+//
+//// MARK: - Selector Fileprivate Extension
+//fileprivate extension Selector {
+//    static let showLocationView = #selector(MainContentsViewController.showLocationView)
+//    static let showPhotoView = #selector(MainContentsViewController.showPhotoView)
+//}
+//
+//// MARK: - UIImage Fileprivate Extension
+//fileprivate extension UIImage {
+//    static let locationIcon = R.image.nav_location_icon()!
+//    static let photoIcon = R.image.nav_photo_icon()!
+//}
+//

@@ -42,15 +42,18 @@
 		EC3D63411F08D5C000728540 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63401F08D5C000728540 /* RxSwift.framework */; };
 		EC3D63431F08D5C400728540 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63421F08D5C400728540 /* SVProgressHUD.framework */; };
 		EC3D63451F08D5CD00728540 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63441F08D5CD00728540 /* SwiftyJSON.framework */; };
+		EC43E3F21F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
+		EC43E3F31F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
+		EC43E3F41F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
 		ECB21A4C1F08B78700A03543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A4B1F08B78700A03543 /* AppDelegate.swift */; };
 		ECB21A531F08B78700A03543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB21A521F08B78700A03543 /* Assets.xcassets */; };
 		ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A601F08B78700A03543 /* NonStoryboardProjectDemoTests.swift */; };
 		ECB21A6C1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */; };
 		ECB690031F08EE5100192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690041F08EE5200192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
-		ECB690071F0916B700192BBF /* UIViewController+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewController+Function.swift */; };
-		ECB690081F0916B700192BBF /* UIViewController+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewController+Function.swift */; };
-		ECB690091F0916B700192BBF /* UIViewController+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewController+Function.swift */; };
+		ECB690071F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
+		ECB690081F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
+		ECB690091F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,7 @@
 		EC3D63401F08D5C000728540 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		EC3D63421F08D5C400728540 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		EC3D63441F08D5CD00728540 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBarButtonItem.swift; path = Models/CustomBarButtonItem.swift; sourceTree = "<group>"; };
 		ECB21A481F08B78700A03543 /* NonStoryboardProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonStoryboardProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB21A4B1F08B78700A03543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECB21A521F08B78700A03543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,7 +111,7 @@
 		ECB21A671F08B78700A03543 /* NonStoryboardProjectDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonStoryboardProjectDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonStoryboardProjectDemoUITests.swift; sourceTree = "<group>"; };
 		ECB21A6D1F08B78700A03543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECB690061F0916B700192BBF /* UIViewController+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Function.swift"; sourceTree = "<group>"; };
+		ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewControllerProtcol+Function.swift"; path = "Extensions/UIViewControllerProtcol+Function.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 		EC3D62FF1F08CBE300728540 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ECF924521F0AA35E004F5EED /* Protcols */,
 				EC3D63051F08CCD500728540 /* Extensions */,
 				EC3D63041F08CCC700728540 /* Enums */,
 				EC3D63061F08CCDC00728540 /* Helpers */,
@@ -230,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				EC3D63211F08CFD300728540 /* UIColor+HEX.swift */,
-				ECB690061F0916B700192BBF /* UIViewController+Function.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,9 +264,18 @@
 			path = SubContents;
 			sourceTree = "<group>";
 		};
+		EC43E3F01F0B5C2F009B77A6 /* BarButtonItem */ = {
+			isa = PBXGroup;
+			children = (
+				EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */,
+			);
+			name = BarButtonItem;
+			sourceTree = "<group>";
+		};
 		EC790CBC1F0A8CD800538702 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				EC43E3F01F0B5C2F009B77A6 /* BarButtonItem */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -346,6 +359,14 @@
 				EC3D63021F08CCA900728540 /* SignUp */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ECF924521F0AA35E004F5EED /* Protcols */ = {
+			isa = PBXGroup;
+			children = (
+				ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */,
+			);
+			name = Protcols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -670,13 +691,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB690071F0916B700192BBF /* UIViewController+Function.swift in Sources */,
+				ECB690071F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */,
 				EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632A1F08CFD900728540 /* Utils.swift in Sources */,
 				EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				EC3D63271F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D630E1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC43E3F21F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,
 				EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */,
 				ECB21A4C1F08B78700A03543 /* AppDelegate.swift in Sources */,
 				EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */,
@@ -687,13 +709,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB690081F0916B700192BBF /* UIViewController+Function.swift in Sources */,
+				ECB690081F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */,
 				EC3D63231F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632B1F08CFD900728540 /* Utils.swift in Sources */,
 				EC3D63091F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63131F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D630F1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC43E3F31F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,
 				ECB690031F08EE5100192BBF /* R.generated.swift in Sources */,
 				ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */,
 				EC3D63171F08CF8E00728540 /* SignUpViewController.swift in Sources */,
@@ -704,13 +727,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECB690091F0916B700192BBF /* UIViewController+Function.swift in Sources */,
+				ECB690091F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */,
 				EC3D63241F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632C1F08CFD900728540 /* Utils.swift in Sources */,
 				EC3D630A1F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63141F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
 				EC3D63101F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC43E3F41F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,
 				ECB690041F08EE5200192BBF /* R.generated.swift in Sources */,
 				ECB21A6C1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift in Sources */,
 				EC3D63181F08CF8E00728540 /* SignUpViewController.swift in Sources */,
@@ -787,7 +811,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -831,7 +855,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
