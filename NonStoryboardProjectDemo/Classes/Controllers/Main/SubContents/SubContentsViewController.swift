@@ -18,7 +18,7 @@ class SubContentsViewController: UIViewController {
         setUpNavigationBar()
         setUpViewItems()
 
-        ViewHelpers().setBackgroundColor(view, top: Utils.Color.main, bottom: UIColor.black)
+        setBackgroundColor(top: Utils.Color.main, bottom: UIColor.black)
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,16 +40,17 @@ extension SubContentsViewController: UIViewControllerProtcol {
     
     }
 
+}
+
+// MARK: - Function
+extension SubContentsViewController {
+
     // MARK: - Selector Methods
     func showNextView() {
         //ただの画面遷移だけの場合
         //        let viewController = SignUpViewController()
-        //        self.navigationController?.pushViewController(viewController, animated: true)
-        
-        let viewController = SignUpViewController()
-        let modalView = UINavigationController(rootViewController: viewController)
-        modalView.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        present(modalView, animated: true, completion: nil)
+        //        self.navigationController?.pushViewController(viewController, animated: true)        
+        showModalView(nextView: SignUpViewController())
     }
-
+    
 }

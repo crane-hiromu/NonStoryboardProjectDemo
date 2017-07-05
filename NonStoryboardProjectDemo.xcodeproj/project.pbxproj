@@ -12,13 +12,10 @@
 		D67B1F26F9253526656A8C12 /* libPods-NonStoryboardProjectDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E6BFCDCE0C695F832D1F6A5 /* libPods-NonStoryboardProjectDemoUITests.a */; };
 		EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
-		EC3D630E1F08CF5500728540 /* MainContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */; };
+		EC3D630E1F08CF5500728540 /* RestaurantContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D630D1F08CF5500728540 /* RestaurantContentsViewController.swift */; };
 		EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */; };
 		EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
 		EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+HEX.swift */; };
-		EC3D63271F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
-		EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
-		EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63251F08CFD900728540 /* ViewHelpers.swift */; };
 		EC3D632A1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
 		EC3D63321F08D3E100728540 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC3D63361F08D3E100728540 /* Localized.strings */; };
 		EC3D63391F08D5A500728540 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63381F08D5A500728540 /* Realm.framework */; };
@@ -29,6 +26,9 @@
 		EC3D63431F08D5C400728540 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63421F08D5C400728540 /* SVProgressHUD.framework */; };
 		EC3D63451F08D5CD00728540 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC3D63441F08D5CD00728540 /* SwiftyJSON.framework */; };
 		EC43E3F21F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */; };
+		EC72BAFE1F0D28D500C2F167 /* UIViewController+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC72BAFD1F0D28D500C2F167 /* UIViewController+Functions.swift */; };
+		EC91EE921F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC91EE911F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift */; };
+		EC91EE961F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC91EE951F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift */; };
 		ECB21A4C1F08B78700A03543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A4B1F08B78700A03543 /* AppDelegate.swift */; };
 		ECB21A531F08B78700A03543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECB21A521F08B78700A03543 /* Assets.xcassets */; };
 		ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB21A601F08B78700A03543 /* NonStoryboardProjectDemoTests.swift */; };
@@ -67,12 +67,11 @@
 		D64A7037BD50711F03D330A9 /* Pods-NonStoryboardProjectDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NonStoryboardProjectDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NonStoryboardProjectDemoTests/Pods-NonStoryboardProjectDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		EC3D63071F08CF3A00728540 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentsViewController.swift; sourceTree = "<group>"; };
+		EC3D630D1F08CF5500728540 /* RestaurantContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantContentsViewController.swift; sourceTree = "<group>"; };
 		EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubContentsViewController.swift; sourceTree = "<group>"; };
 		EC3D63151F08CF8E00728540 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EC3D63211F08CFD300728540 /* UIColor+HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
-		EC3D63251F08CFD900728540 /* ViewHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewHelpers.swift; sourceTree = "<group>"; };
-		EC3D63261F08CFD900728540 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = ../Utils/Utils.swift; sourceTree = "<group>"; };
+		EC3D63261F08CFD900728540 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EC3D63351F08D3E100728540 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localized.strings; sourceTree = "<group>"; };
 		EC3D63371F08D3E900728540 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localized.strings; sourceTree = "<group>"; };
 		EC3D63381F08D5A500728540 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -82,7 +81,10 @@
 		EC3D63401F08D5C000728540 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		EC3D63421F08D5C400728540 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		EC3D63441F08D5CD00728540 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBarButtonItem.swift; path = Models/CustomBarButtonItem.swift; sourceTree = "<group>"; };
+		EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
+		EC72BAFD1F0D28D500C2F167 /* UIViewController+Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Functions.swift"; sourceTree = "<group>"; };
+		EC91EE911F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantContentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		EC91EE951F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantContentsSettingViewController.swift; sourceTree = "<group>"; };
 		ECB21A481F08B78700A03543 /* NonStoryboardProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonStoryboardProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB21A4B1F08B78700A03543 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECB21A521F08B78700A03543 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 		ECB21A671F08B78700A03543 /* NonStoryboardProjectDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NonStoryboardProjectDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonStoryboardProjectDemoUITests.swift; sourceTree = "<group>"; };
 		ECB21A6D1F08B78700A03543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewControllerProtcol+Function.swift"; path = "Extensions/UIViewControllerProtcol+Function.swift"; sourceTree = "<group>"; };
+		ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerProtcol+Function.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,10 +166,10 @@
 		EC3D62FF1F08CBE300728540 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ECF924521F0AA35E004F5EED /* Protcols */,
-				EC3D63051F08CCD500728540 /* Extensions */,
 				EC3D63041F08CCC700728540 /* Enums */,
+				EC3D63051F08CCD500728540 /* Extensions */,
 				EC3D63061F08CCDC00728540 /* Helpers */,
+				ECF924521F0AA35E004F5EED /* Protcols */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,7 +185,7 @@
 		EC3D63011F08CCA200728540 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D630B1F08CF4100728540 /* MainContents */,
+				EC3D630B1F08CF4100728540 /* RestaurantContents */,
 				EC3D630C1F08CF4900728540 /* SubContents */,
 				EC3D63071F08CF3A00728540 /* MainTabBarController.swift */,
 			);
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				EC3D63211F08CFD300728540 /* UIColor+HEX.swift */,
+				EC72BAFD1F0D28D500C2F167 /* UIViewController+Functions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,18 +227,17 @@
 		EC3D63061F08CCDC00728540 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D63251F08CFD900728540 /* ViewHelpers.swift */,
 			);
-			name = Helpers;
-			path = Utils;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		EC3D630B1F08CF4100728540 /* MainContents */ = {
+		EC3D630B1F08CF4100728540 /* RestaurantContents */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D630D1F08CF5500728540 /* MainContentsViewController.swift */,
+				EC91EE941F0D2550002F4CAA /* Main */,
+				EC91EE931F0D2543002F4CAA /* Settings */,
 			);
-			path = MainContents;
+			path = RestaurantContents;
 			sourceTree = "<group>";
 		};
 		EC3D630C1F08CF4900728540 /* SubContents */ = {
@@ -251,7 +253,7 @@
 			children = (
 				EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */,
 			);
-			name = BarButtonItem;
+			path = BarButtonItem;
 			sourceTree = "<group>";
 		};
 		EC790CBC1F0A8CD800538702 /* Views */ = {
@@ -259,7 +261,24 @@
 			children = (
 				EC43E3F01F0B5C2F009B77A6 /* BarButtonItem */,
 			);
-			name = Views;
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EC91EE931F0D2543002F4CAA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				EC91EE951F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EC91EE941F0D2550002F4CAA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EC91EE911F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift */,
+				EC3D630D1F08CF5500728540 /* RestaurantContentsViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		ECB21A3F1F08B78700A03543 = {
@@ -316,8 +335,8 @@
 			isa = PBXGroup;
 			children = (
 				ECB21A7B1F08B81800A03543 /* Controllers */,
-				EC790CBC1F0A8CD800538702 /* Views */,
 				EC3D62FF1F08CBE300728540 /* Models */,
+				EC790CBC1F0A8CD800538702 /* Views */,
 				ECB21A4B1F08B78700A03543 /* AppDelegate.swift */,
 			);
 			path = Classes;
@@ -348,7 +367,7 @@
 			children = (
 				ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */,
 			);
-			name = Protcols;
+			path = Protcols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -674,11 +693,13 @@
 				ECB690071F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */,
 				EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632A1F08CFD900728540 /* Utils.swift in Sources */,
+				EC91EE961F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift in Sources */,
+				EC91EE921F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift in Sources */,
 				EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */,
-				EC3D63271F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
-				EC3D630E1F08CF5500728540 /* MainContentsViewController.swift in Sources */,
+				EC3D630E1F08CF5500728540 /* RestaurantContentsViewController.swift in Sources */,
 				EC43E3F21F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,
+				EC72BAFE1F0D28D500C2F167 /* UIViewController+Functions.swift in Sources */,
 				EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */,
 				ECB21A4C1F08B78700A03543 /* AppDelegate.swift in Sources */,
 				EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */,
@@ -689,7 +710,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3D63281F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				ECB690031F08EE5100192BBF /* R.generated.swift in Sources */,
 				ECB21A611F08B78700A03543 /* NonStoryboardProjectDemoTests.swift in Sources */,
 			);
@@ -699,7 +719,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC3D63291F08CFD900728540 /* ViewHelpers.swift in Sources */,
 				ECB690041F08EE5200192BBF /* R.generated.swift in Sources */,
 				ECB21A6C1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift in Sources */,
 			);

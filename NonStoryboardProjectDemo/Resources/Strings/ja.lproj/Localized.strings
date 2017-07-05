@@ -12,7 +12,7 @@
 
 /* NavigationBar */
 "nav_title_restaurant_photos" = "お店一覧";
-"nav_title_restaurant_map" = "マップ";
+"nav_title_restaurant_locations" = "マップ";
 "nav_title_sub" = "サブ";
 "nav_title_signup" = "サインアップ";
 "nav_title_signin" = "サインイン";

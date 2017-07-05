@@ -12,7 +12,7 @@
 
 /* NavigationBar */
 "nav_title_restaurant_photos" = "Restaurants";
-"nav_title_restaurant_map" = "Map";
+"nav_title_restaurant_locations" = "Map";
 "nav_title_sub" = "sub";
 "nav_title_signup" = "SignUp";
 "nav_title_signin" = "SignIn";

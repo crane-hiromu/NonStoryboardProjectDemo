@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
         setUpNavigationBar()
         setUpViewItems()
         
-        ViewHelpers().setBackgroundColor(view, top: Utils.Color.main, bottom: UIColor.white)
+        setBackgroundColor(top: Utils.Color.main, bottom: UIColor.white)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,7 +70,7 @@ extension SignUpViewController: UIViewControllerProtcol {
     // MARK: Internal Protcol Methods
     func setUpNavigationBar() {
         navigationItem.title = R.string.localized.nav_title_signup()
-        navigationItem.leftBarButtonItem = CustomBarButtonItem().setClose(self, selector: #selector(self.dismissModalView))
+        navigationItem.rightBarButtonItem = CustomBarButtonItem().setClose(self, selector: #selector(self.dismissModalView))
     }
     
     func setUpViewItems() {
@@ -93,18 +93,13 @@ extension SignUpViewController: UITextFieldDelegate {
 
 }
 
-// MARK: - Functions
+// MARK: - Function
 extension SignUpViewController {
 
-    // MARK: Internal Methods
+    // MARK: Selector Methods
     func onClickBtn() {
         print("test成功")
         hoge.text = "test成功"
     }
-    
-    func dismissModalView() {
-        dismiss(animated: true, completion: nil)
-    }
 
 }
-

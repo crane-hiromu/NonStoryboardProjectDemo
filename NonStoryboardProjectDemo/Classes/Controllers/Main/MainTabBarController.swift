@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpToAppendTab(MainContentsViewController(), R.string.localized.tab_title_main(), R.image.tab_bar_home_icon())
+        setUpToAppendTab(RestaurantContentsViewController(), R.string.localized.tab_title_main(), R.image.tab_bar_home_icon())
         setUpToAppendTab(SubContentsViewController(), R.string.localized.tab_title_sub(), R.image.tab_bar_home_icon())
         
         setViewControllers(tabs, animated: false)
@@ -31,7 +31,7 @@ class MainTabBarController: UITabBarController {
 
 }
 
-// MARK: - Functions
+// MARK: - Function
 extension MainTabBarController {
     
     // MARK: Fileprivate Methods
