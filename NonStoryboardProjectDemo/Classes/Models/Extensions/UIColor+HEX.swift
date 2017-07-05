@@ -14,10 +14,11 @@ extension UIColor {
     /// - Parameter hex: 色
     /// - Parameter alpha: 透過率（デフォルト 1.0）
     convenience init(hex: Int, alpha: Double = 1.0) {
-        let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
-        let g = CGFloat((hex & 0x00FF00) >> 8) / 255.0
-        let b = CGFloat(hex & 0x0000FF) / 255.0
-        self.init(red: r, green: g, blue: b, alpha: CGFloat(alpha))
+        let denominator = 255.0
+        let red = CGFloat((hex & 0xFF0000) >> 16) / denominator
+        let green = CGFloat((hex & 0x00FF00) >> 8) / denominator
+        let blue = CGFloat(hex & 0x0000FF) / denominator
+        self.init(red: red, green: green, blue: blue, alpha: CGFloat(alpha))
     }
 
 }
