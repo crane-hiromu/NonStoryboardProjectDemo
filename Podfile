@@ -2,7 +2,8 @@
 platform :ios, '8.0'
 
 def shared_library
-    #pod 'FontAwesomeKit'
+    # Macをserrieにupdateしたらcartfileで管理する（現状エラーになる）
+    pod 'ObjectMapper'
 end
 
 target 'NonStoryboardProjectDemo’ do
@@ -13,12 +14,14 @@ end
 
 target 'NonStoryboardProjectDemoTests' do
   inherit! :search_paths
-  
+
+  use_frameworks!  
   shared_library
 end
 
 target 'NonStoryboardProjectDemoUITests' do
   inherit! :search_paths
 
+  use_frameworks!
   shared_library
 end

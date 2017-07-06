@@ -15,6 +15,7 @@ class RestaurantContentsViewController: UIViewController {
     // MARK: Fileprivate Instance
 //    fileprivate var clLocations = CLLocationCoordinate2D()
     fileprivate var restaurantLocations: [MKAnnotation] = []
+    fileprivate let notification = NotificationCenter.default
 
     // MARK: Fileprivate ViewItems
     fileprivate var collectionViewLayout: UICollectionViewFlowLayout! {
@@ -76,28 +77,20 @@ class RestaurantContentsViewController: UIViewController {
 
         setUpNavigationBar()
         setUpViewItems()
-        
-        //別ファイルにきりだし、import
-        let params = ["keyid": "374d23e30e6af64ea56b8f4433500186", "format": "json", "hit_per_page":"2"]
+        setUpImages()
 
-        Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
-            guard let response = response.result.value else { return }
-            let json = JSON(response)
-            print("---- response ----")
-            print(json["rest"])
-            for information in json["rest"] {
-                print("--- rest ---")
-
-            }
-            print("---- response end ----")
-        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let notification = NotificationCenter.default
         notification.addObserver(self, selector: #selector(self.onOrientationChange), name: .UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        notification.removeObserver(self, name: .UIDeviceOrientationDidChange, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -203,6 +196,17 @@ extension RestaurantContentsViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.requestLocation() //位置情報の取得に失敗した場合、もう一度位置情報を取得する
+    }
+    
+}
+
+// MARK: - Neswork Function
+extension RestaurantContentsViewController {
+
+    // MARK: Fileprivate Methods
+    fileprivate func setUpImages() {
+        let params = ["hit_per_page":"2"]
+//        NetworkManager().callForGurunavi(params)
     }
     
 }
