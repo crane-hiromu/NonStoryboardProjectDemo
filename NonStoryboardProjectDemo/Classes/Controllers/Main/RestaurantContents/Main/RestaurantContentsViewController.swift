@@ -76,6 +76,21 @@ class RestaurantContentsViewController: UIViewController {
 
         setUpNavigationBar()
         setUpViewItems()
+        
+        //別ファイルにきりだし、import
+        let params = ["keyid": "374d23e30e6af64ea56b8f4433500186", "format": "json", "hit_per_page":"2"]
+
+        Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
+            guard let response = response.result.value else { return }
+            let json = JSON(response)
+            print("---- response ----")
+            print(json["rest"])
+            for information in json["rest"] {
+                print("--- rest ---")
+
+            }
+            print("---- response end ----")
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
