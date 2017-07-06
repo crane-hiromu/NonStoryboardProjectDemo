@@ -49,6 +49,12 @@ class RestaurantContentsViewController: UIViewController {
             settingButton = CustomBarButtonItem().setSetting(self, selector: #selector(self.showSettingModalView))
         }
     }
+    
+    fileprivate var locationManager: CLLocationManager! {
+        didSet {
+            locationManager.delegate = self
+        }
+    }
 
     fileprivate var mapView: MKMapView! {
         didSet {
@@ -62,7 +68,7 @@ class RestaurantContentsViewController: UIViewController {
             let latDist: CLLocationDistance = 500
             let lonDist: CLLocationDistance = 500
 
-            //ある程度メジャーなところは静的に押さえておいても良いのでは？渋谷新宿池袋、大都市の駅
+            //ある程度メジャーなところは静的に設定しておいても良いのでは？渋谷新宿池袋、大都市の駅
             /* ----- realmで管理したい ----- */
 
             let region = MKCoordinateRegionMakeWithDistance(coordinate, latDist, lonDist);
@@ -73,7 +79,6 @@ class RestaurantContentsViewController: UIViewController {
             mapView.isHidden = true // 初期表示は画像一覧のため隠しておく
         }
     }
-
 
     // MARK: Override Methods
     override func viewDidLoad() {
@@ -114,7 +119,9 @@ extension RestaurantContentsViewController: UIViewControllerProtcol {
         collectionViewLayout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewLayout)
         view.addSubview(collectionView)
-
+        
+        locationManager = CLLocationManager()
+        
         mapView = MKMapView()
         view.addSubview(mapView)
     }
@@ -144,6 +151,35 @@ extension RestaurantContentsViewController: UICollectionViewDelegate, UICollecti
 // MARK: - MKMapViewDelegate Implement
 extension RestaurantContentsViewController: MKMapViewDelegate {
 
+      // MARK: Implement Methods
+    
+}
+
+// MARK: - CLLocationManagerDelegate Implement
+extension RestaurantContentsViewController: CLLocationManagerDelegate {
+    
+    // MARK: Implement Methods
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse, .authorizedAlways:
+            locationManager.requestLocation() // 一度だけ位置情報を取得する
+            
+        default:
+            locationManager.requestWhenInUseAuthorization() // アプリ起動中のみ位置情報を使用するための許諾
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        var lo = locations.map { result in
+//            result.coordinate.latitude
+//            result.coordinate.longitude
+//        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationManager.requestLocation() //位置情報の取得に失敗した場合、もう一度位置情報を取得する
+    }
+    
 }
 
 // MARK: - Function
@@ -179,5 +215,11 @@ extension RestaurantContentsViewController {
         let deviceOrientation = UIDevice.current.orientation
         collectionViewLayout.scrollDirection = UIDeviceOrientationIsLandscape(deviceOrientation) ? .horizontal : .vertical
     }
+
+// 位置情報を手動で再取得する場合はこちらを実装したい
+//    // MARK: Fileprivate Methods
+//    fileprivate func refreshLocation() {
+//        locationManager.requestLocation()
+//    }
 
 }
