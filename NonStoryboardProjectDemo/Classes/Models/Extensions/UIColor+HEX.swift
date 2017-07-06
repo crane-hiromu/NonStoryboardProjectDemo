@@ -14,7 +14,7 @@ extension UIColor {
     /// - Parameter hex: 色
     /// - Parameter alpha: 透過率（デフォルト 1.0）
     convenience init(hex: Int, alpha: Double = 1.0) {
-        let denominator = 255.0
+        let denominator = CGFloat(255.0)
         let red = CGFloat((hex & 0xFF0000) >> 16) / denominator
         let green = CGFloat((hex & 0x00FF00) >> 8) / denominator
         let blue = CGFloat(hex & 0x0000FF) / denominator

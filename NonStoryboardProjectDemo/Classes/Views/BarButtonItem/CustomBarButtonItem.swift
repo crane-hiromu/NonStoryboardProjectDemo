@@ -84,6 +84,10 @@ struct CustomBarButtonItem {
     func setSetting(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
         return UIBarButtonItem(image: .settingIcon, style: .plain, target: view, action: selector)
     }
+    
+    func setSearch(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
+        return UIBarButtonItem(image: .searchIcon, style: .plain, target: view, action: selector)
+    }
 
 
 }
@@ -93,4 +97,5 @@ fileprivate extension UIImage {
     static let locationIcon = #imageLiteral(resourceName: "nav_location_icon")
     static let photoIcon = #imageLiteral(resourceName: "nav_photo_icon")
     static let settingIcon = #imageLiteral(resourceName: "nav_setting_icon")
+    static let searchIcon = #imageLiteral(resourceName: "nav_search_icon")
 }

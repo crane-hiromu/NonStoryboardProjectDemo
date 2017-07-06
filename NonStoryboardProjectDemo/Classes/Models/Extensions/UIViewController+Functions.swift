@@ -19,8 +19,8 @@ extension UIViewController {
     }
     
     /// present()で遷移した場合のモーダルを破棄する
-    func dismissModalView(animated: Bool = true) {
-        dismiss(animated: animated, completion: nil)
+    func dismissModalView() {
+        dismiss(animated: true, completion: nil)
     }
 
     /// ナビゲーションバーの透過

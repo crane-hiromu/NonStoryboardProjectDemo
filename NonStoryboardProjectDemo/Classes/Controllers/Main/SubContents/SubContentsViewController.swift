@@ -50,7 +50,7 @@ extension SubContentsViewController {
         //ただの画面遷移だけの場合
         //        let viewController = SignUpViewController()
         //        self.navigationController?.pushViewController(viewController, animated: true)        
-        showModalView(nextView: SignUpViewController())
+        showModalView(nextView: SignUpViewController(), animation: .crossDissolve)
     }
     
 }

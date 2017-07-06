@@ -248,18 +248,19 @@
 			path = SubContents;
 			sourceTree = "<group>";
 		};
-		EC43E3F01F0B5C2F009B77A6 /* BarButtonItem */ = {
+		EC43E3F01F0B5C2F009B77A6 /* BarButtonItems */ = {
 			isa = PBXGroup;
 			children = (
 				EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */,
 			);
+			name = BarButtonItems;
 			path = BarButtonItem;
 			sourceTree = "<group>";
 		};
 		EC790CBC1F0A8CD800538702 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EC43E3F01F0B5C2F009B77A6 /* BarButtonItem */,
+				EC43E3F01F0B5C2F009B77A6 /* BarButtonItems */,
 			);
 			path = Views;
 			sourceTree = "<group>";
