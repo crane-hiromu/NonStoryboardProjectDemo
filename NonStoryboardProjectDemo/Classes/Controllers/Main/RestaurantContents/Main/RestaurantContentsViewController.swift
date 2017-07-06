@@ -11,7 +11,11 @@ import MapKit
 
 // MARK: - Class
 class RestaurantContentsViewController: UIViewController {
-    
+
+    // MARK: Fileprivate Instance
+//    fileprivate var clLocations = CLLocationCoordinate2D()
+    fileprivate var restaurantLocations: [MKAnnotation] = []
+
     // MARK: Fileprivate ViewItems
     fileprivate var collectionViewLayout: UICollectionViewFlowLayout! {
         didSet {
@@ -58,25 +62,11 @@ class RestaurantContentsViewController: UIViewController {
 
     fileprivate var mapView: MKMapView! {
         didSet {
-            /* ----- realmで管理したい ----- */
-            // 中心点の緯度経度
-            let lat: CLLocationDegrees = 35.6580339
-            let lon: CLLocationDegrees = 139.7016358
-            let coordinate: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lon)
-
-            // 縮尺
-            let latDist: CLLocationDistance = 500
-            let lonDist: CLLocationDistance = 500
-
-            //ある程度メジャーなところは静的に設定しておいても良いのでは？渋谷新宿池袋、大都市の駅
-            /* ----- realmで管理したい ----- */
-
-            let region = MKCoordinateRegionMakeWithDistance(coordinate, latDist, lonDist);
-
             mapView.frame = view.bounds
             mapView.delegate = self
-            mapView.setRegion(region, animated: true)
-            mapView.isHidden = true // 初期表示は画像一覧のため隠しておく
+            mapView.showsUserLocation = true
+            mapView.showsScale = true
+            mapView.isHidden = true // 初期表示は画像一覧のためViewを隠しておく
         }
     }
 
@@ -86,6 +76,21 @@ class RestaurantContentsViewController: UIViewController {
 
         setUpNavigationBar()
         setUpViewItems()
+        
+        //別ファイルにきりだし、import
+        let params = ["keyid": "374d23e30e6af64ea56b8f4433500186", "format": "json", "hit_per_page":"2"]
+
+        Alamofire.request("https://api.gnavi.co.jp/RestSearchAPI/20150630/", parameters: params).responseJSON{ response in
+            guard let response = response.result.value else { return }
+            let json = JSON(response)
+            print("---- response ----")
+            print(json["rest"])
+            for information in json["rest"] {
+                print("--- rest ---")
+
+            }
+            print("---- response end ----")
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -151,8 +156,24 @@ extension RestaurantContentsViewController: UICollectionViewDelegate, UICollecti
 // MARK: - MKMapViewDelegate Implement
 extension RestaurantContentsViewController: MKMapViewDelegate {
 
-      // MARK: Implement Methods
-    
+//    // MARK: Implement Methods
+//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//
+//        //アノテーションビューを生成する。
+//        let testPinView = MKPinAnnotationView()
+//
+//        //アノテーションビューに座標、タイトル、サブタイトルを設定する。
+//        testPinView.annotation = annotation
+//
+//        //アノテーションビューに色を設定する。
+//        testPinView.pinTintColor = UIColor.blue
+//
+//        //吹き出しの表示をONにする。
+//        testPinView.canShowCallout = true
+//
+//        return testPinView
+//    }
+
 }
 
 // MARK: - CLLocationManagerDelegate Implement
@@ -170,12 +191,16 @@ extension RestaurantContentsViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        var lo = locations.map { result in
-//            result.coordinate.latitude
-//            result.coordinate.longitude
-//        }
+        guard let newLocation = locations.first?.coordinate else {
+            locationManager.requestLocation()
+            return
+        }
+
+        let radius: CLLocationDistance = 500 // いずれは設定で変更できるように、realmからとってくるようにしたい
+        let region = MKCoordinateRegionMakeWithDistance(newLocation, radius, radius);
+        mapView.setRegion(region, animated: true) // 現在座標を中心に地図を表示
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.requestLocation() //位置情報の取得に失敗した場合、もう一度位置情報を取得する
     }
@@ -216,9 +241,23 @@ extension RestaurantContentsViewController {
         collectionViewLayout.scrollDirection = UIDeviceOrientationIsLandscape(deviceOrientation) ? .horizontal : .vertical
     }
 
+// ピンを表示、消す処理　あとでレスポンスの中身が整理できたら作成する
+//    fileprivate func appendPinsOnView() {
+////        for location in  {
+////            let annotation = MKPointAnnotation()
+////            annotation.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+////            restaurantLocations.append(annotation)
+////        }
+//        mapView.addAnnotations(restaurantLocations)
+//    }
+//
+//    fileprivate func removePinsOnView() {
+//        mapView.removeAnnotations(restaurantLocations)
+//    }
+
 // 位置情報を手動で再取得する場合はこちらを実装したい
 //    // MARK: Fileprivate Methods
-//    fileprivate func refreshLocation() {
+//    fileprivate func updateLocation() {
 //        locationManager.requestLocation()
 //    }
 
