@@ -15,7 +15,7 @@ class RestaurantContentsViewController: UIViewController {
     // MARK: Fileprivate ViewItems
     fileprivate var collectionViewLayout: UICollectionViewFlowLayout! {
         didSet {
-            let edgeLength = view.frame.width / 3 - 10
+            let edgeLength = view.frame.width / 3 - 10 // 程よい隙間を設定するために-10を使用。端末ごとにテストし問題なければこの値のままで。
             collectionViewLayout.scrollDirection = .vertical
             collectionViewLayout.itemSize = CGSize(width: edgeLength, height: edgeLength)
         }
@@ -81,6 +81,13 @@ class RestaurantContentsViewController: UIViewController {
 
         setUpNavigationBar()
         setUpViewItems()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(self.onOrientationChange), name: .UIDeviceOrientationDidChange, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -165,6 +172,12 @@ extension RestaurantContentsViewController {
     
     func showSettingModalView() {
         showModalView(nextView: RestaurantContentsSettingViewController(), animation: .crossDissolve)
+    }
+
+    // MARK: Selector Notificaiton Methods
+    func onOrientationChange(notification: NSNotification){
+        let deviceOrientation = UIDevice.current.orientation
+        collectionViewLayout.scrollDirection = UIDeviceOrientationIsLandscape(deviceOrientation) ? .horizontal : .vertical
     }
 
 }
