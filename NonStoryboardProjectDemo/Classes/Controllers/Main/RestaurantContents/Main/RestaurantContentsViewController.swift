@@ -205,8 +205,17 @@ extension RestaurantContentsViewController {
 
     // MARK: Fileprivate Methods
     fileprivate func setUpImages() {
-        let params = ["hit_per_page":"2"]
-//        NetworkManager().callForGurunavi(params)
+        let parameters = SearchRestaurantRequestParameters(latitude: 35.658034, longitude: 139.701636).parameters
+        NetworkManager().callForGurunavi(SearchRestaurantRequest.post(parameters: parameters)) { response in
+            switch response {
+            case .success(let result):
+                print("---- log ----")
+                print(result)
+
+            case .failure(let error):
+                print("error")
+            }
+        }
     }
     
 }
