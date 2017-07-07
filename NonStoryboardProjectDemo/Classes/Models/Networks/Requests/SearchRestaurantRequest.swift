@@ -12,7 +12,7 @@ import ObjectMapper
 enum SearchRestaurantRequest: GurunaviRequestProtocol {
     typealias ResponseType = SearchRestaurantResponse
     
-    case post(parameters: SearchRestaurantRequestParameters)
+    case post(parameters: Parameters)
     
     var method: HTTPMethod {
         switch self {
@@ -27,26 +27,47 @@ enum SearchRestaurantRequest: GurunaviRequestProtocol {
     var parameters: Parameters? {
         switch self {
         case .post(let parameters):
-            return [ // 一旦このような形だが、後々検索できるようにするためここは切り出したい。
-                "id": parameters.id,
-                "format": parameters.format,
-                "latitude": parameters.latitude,
-                "longitude": parameters.longitude,
-                "hit_per_page": parameters.hit_per_page ?? 20,
-                "range": parameters.range ?? 2,
-                "lang": parameters.lang ?? "ja"
-            ]
+            return parameters
         }
     }
 
 }
 
+/// 'ぐるなびAPI'のリクエストのキー名をそのまま使用しているため、スネークケースのものがある
 struct SearchRestaurantRequestParameters {
-    var id: String = "98a064bc58a5f096041f18968da09199"
-    var format: String = "json"
     var latitude: Double
     var longitude: Double
-    var hit_per_page: Int? // デフォルトは10件 レスポンス件数
-    var range: Int? // デフォルト値は500m [1:300m, 2:500m, 3:1,000m, 4:2,000m, 5:3,000m]
-    var lang: String? // デフォルト値は日本語 [ja: 日本語, zh_cn: 中国語 (簡体字), zh_tw: 中国語 (繁体字), ko: 韓国語, en: 英語]
+    var hit_per_page: Int?
+    var range: Int?
+    var lang: String?
+
+    var parameters: Parameters {
+        var parameters = Parameters()
+        parameters["id"] = "98a064bc58a5f096041f18968da09199"
+        parameters["format"] = "json"
+        parameters["latitude"] = latitude
+        parameters["longitude"] = longitude
+        parameters["hit_per_page"] = hit_per_page
+        parameters["range"] = range
+        parameters["lang"] = lang
+        return parameters
+    }
+
+    /// ぐるなびレストラン検索パラメータ
+    /// - parameter latitude: 緯度
+    /// - parameter longitude: 軽度
+    /// - parameter hit_per_page: レスポンス件数　デフォルト値10件
+    /// - parameter range: 範囲 デフォルト値は500m [1:300m, 2:500m, 3:1,000m, 4:2,000m, 5:3,000m]
+    /// - parameter lang: 言語 デフォルト値は日本語 [ja: 日本語, zh_cn: 中国語 (簡体字), zh_tw: 中国語 (繁体字), ko: 韓国語, en: 英語]
+    init(latitude: Double,
+         longitude: Double,
+         hit_per_page: Int = 20, //  デフォルトの10件は少ないので20件を設定
+         range: Int = 2,
+         lang: String = "ja"){
+        self.latitude = latitude
+        self.longitude = longitude
+        self.hit_per_page = hit_per_page
+        self.range = range
+        self.lang = lang
+    }
 }
