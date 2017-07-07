@@ -23,7 +23,7 @@ extension RequestProtocol {
         return JSONEncoding.default
     }
     
-    public func asURLRequest() throws -> URLRequest {
+    func asURLRequest() throws -> URLRequest {
         let url = try baseURL.asURL()
         
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
@@ -35,4 +35,10 @@ extension RequestProtocol {
         return urlRequest
     }
     
+    func fromJson(json: AnyObject) -> Result<ResponseType> {
+        guard let value = json as? ResponseType else {
+            return .failure(ResponseType.self as! Error)
+        }
+        return .success(value)
+    }
 }
