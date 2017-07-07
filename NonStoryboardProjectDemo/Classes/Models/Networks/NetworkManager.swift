@@ -10,29 +10,36 @@ import Alamofire
 import ObjectMapper
 
 protocol ApiPrtocol {
-    func callForGurunavi<T: GurunaviRequestProtocol, V: Mappable>(_ request:T, completion: @escaping (Result<V>)  -> Void) where V == T.ResponseType
+    func callForGurunavi<T, V>(_ request:T, completion: @escaping (Result<V>)  -> Void)
+        where T: GurunaviRequestProtocol, V: Mappable, V == T.ResponseType
 }
 
 struct NetworkManager: ApiPrtocol {
-    private let statusCodeRange = 200..<300
+    private let successRange = 200..<300
     
-    func callForGurunavi<T: GurunaviRequestProtocol, V: Mappable>(_ request:T, completion: @escaping (Result<V>)  -> Void) where V == T.ResponseType {
-        Alamofire.request(request)
-            .validate(statusCode: statusCodeRange)
-            .responseJSON{ (response: DataResponse<V>) in
-                switch response.result {
-                case .success(let result):
-                    DispatchQueue.main.async {
-                        completion(.success(result))
+    func callForGurunavi<T, V>(_ request:T, completion: @escaping (Result<V>)  -> Void)
+        where T: GurunaviRequestProtocol, V: Mappable, V == T.ResponseType {
+            Alamofire.request(request)
+                .validate(statusCode: successRange)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let result):
+                        DispatchQueue.main.async {
+                            completion(request.fromJson(json: result as AnyObject))
+                        }
+
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            completion(.failure(error))
+                        }
                     }
                     
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        completion(.failure(error))
-                    }
-                }
-            
-        }
+            }
     }
     
 }
+//
+//enum GurunaviResult<Value> {
+//    case success(Value)
+//    case failure(Error)
+//}
