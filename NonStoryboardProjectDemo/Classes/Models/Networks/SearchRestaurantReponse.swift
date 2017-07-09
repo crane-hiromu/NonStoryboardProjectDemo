@@ -11,7 +11,10 @@ import ObjectMapper
 
 /// 'ぐるなびAPI'のレスポンスのキー名をそのまま使用しているため、スネークケースのものがある
 class SearchRestaurantResponse: Mappable {
-
+    
+    var attributes: Attributes?
+    var hit_per_page: Int?
+    var page_offset: Int?
     var rest: RestaurantInfomation?
 
     // 以下、レスポンスには含まれない情報、アプリで管理するもの
@@ -22,14 +25,30 @@ class SearchRestaurantResponse: Mappable {
     required convenience init?(map: Map) {
         self.init()
     }
-    
+
     func mapping(map: Map) {
+        attributes <- map["attributes"]
+        hit_per_page <- map["hit_per_page"]
+        page_offset <- map["page_offset"]
         rest <- map["rest"]
     }
 }
 
+class Attributes: Mappable {
+
+    var api_version: String?
+
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        api_version <- map["api_version"]
+    }
+}
+
 class RestaurantInfomation: Mappable {
-    var id: Int?
+    var id: String?
     var name: String?
     var latitude: Double?
     var longitude: Double?
@@ -54,7 +73,7 @@ class RestaurantInfomation: Mappable {
         latitude <- map["latitude"]
         longitude <- map["longitude"]
         category <- map["category"]
-        coupon_url <- map["coupon_url"]
+        coupon_url <- map["coupon_url"] // URLTransform()
         tel <- map["tel"]
         pr <- map["RestaurantDescription"]
         image <- map["image"]

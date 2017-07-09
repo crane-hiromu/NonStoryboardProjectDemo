@@ -42,3 +42,14 @@ extension RequestProtocol {
         return .success(value)
     }
 }
+
+//extension RequestProtocol where ResponseType: Mappable {
+//
+//    func fromJson(json: AnyObject) -> Result<ResponseType> {
+//        guard let value = Mapper<ResponseType>().map(json) else {
+//            return .failure(ResponseType.self as! Error)
+//        }
+//        return .success(value)
+//    }
+//
+//}

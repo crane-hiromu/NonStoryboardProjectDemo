@@ -8,13 +8,14 @@
 
 import UIKit
 import MapKit
+import SwiftyJSON
+import AlamofireImage
 
 // MARK: - Class
 class RestaurantContentsViewController: UIViewController {
 
     // MARK: Fileprivate Instance
-//    fileprivate var clLocations = CLLocationCoordinate2D()
-    fileprivate var restaurantLocations: [MKAnnotation] = []
+    fileprivate var restaurantInfoArray: [SearchRestaurantModel] = []
     fileprivate let notification = NotificationCenter.default
 
     // MARK: Fileprivate ViewItems
@@ -135,13 +136,30 @@ extension RestaurantContentsViewController: UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return restaurantInfoArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
+        cell.backgroundView?.removeFromSuperview()
+        
         cell.backgroundColor = UIColor.orange
+
+        let restaurantItem = restaurantInfoArray[indexPath.row]
+        
+        // ぐるなびAPIレスポンスでは2枚の画像urlが返ってくる。1枚目：店のロゴ、2枚目：料理画像 であることが多い。
+        // 2枚目があればセット、なければ1枚目をセットする。
+        if let urlString = restaurantItem.rest.image_url.shop_image2, !urlString.isEmpty, let url = URL(string: urlString) {
+            let image = UIImageView()
+            image.af_setImage(withURL: url)
+            cell.backgroundView = image
+        } else if let urlString = restaurantItem.rest.image_url.shop_image1, !urlString.isEmpty, let url = URL(string: urlString) {
+            let image = UIImageView()
+            image.af_setImage(withURL: url)
+            cell.backgroundView = image
+        }
+
         return cell
     }
 }
@@ -205,16 +223,11 @@ extension RestaurantContentsViewController {
 
     // MARK: Fileprivate Methods
     fileprivate func setUpImages() {
-        let parameters = SearchRestaurantRequestParameters(latitude: 35.658034, longitude: 139.701636).parameters
-        NetworkManager().callForGurunavi(SearchRestaurantRequest.post(parameters: parameters)) { response in
-            switch response {
-            case .success(let result):
-                print("---- log ----")
-                print(result)
-
-            case .failure(let error):
-                print("error")
-            }
+        // 現在位置を取得しセットする
+        let parameters = SearchRestaurantRequestParameters(latitude: 35.658034, longitude: 139.701636, hit_per_page: 100).parameters
+        NetworkManager().callForSearchRestaurant(parameters) { response in
+            self.restaurantInfoArray = response
+            self.collectionView.reloadData()
         }
     }
     
