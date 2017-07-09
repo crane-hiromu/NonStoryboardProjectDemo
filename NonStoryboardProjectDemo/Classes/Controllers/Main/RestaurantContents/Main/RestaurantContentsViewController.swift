@@ -15,7 +15,10 @@ import AlamofireImage
 class RestaurantContentsViewController: UIViewController {
 
     // MARK: Fileprivate Instance
+    fileprivate var currentLocation = CLLocationCoordinate2D()
     fileprivate var restaurantInfoArray: [SearchRestaurantModel] = []
+    fileprivate var restaurantImageArray: [URL] = []
+    fileprivate var restaurantLocations: [MKAnnotation] = []
     fileprivate let notification = NotificationCenter.default
 
     // MARK: Fileprivate ViewItems
@@ -32,7 +35,6 @@ class RestaurantContentsViewController: UIViewController {
             collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
             collectionView.delegate = self
             collectionView.dataSource = self
-            //collectionView.reloadData() //いずれ検索変更の際に実装予定
         }
     }
     
@@ -58,6 +60,7 @@ class RestaurantContentsViewController: UIViewController {
     
     fileprivate var locationManager: CLLocationManager! {
         didSet {
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.delegate = self
         }
     }
@@ -68,6 +71,7 @@ class RestaurantContentsViewController: UIViewController {
             mapView.delegate = self
             mapView.showsUserLocation = true
             mapView.showsScale = true
+            mapView.mapType = .standard
             mapView.isHidden = true // 初期表示は画像一覧のためViewを隠しておく
         }
     }
@@ -78,8 +82,9 @@ class RestaurantContentsViewController: UIViewController {
 
         setUpNavigationBar()
         setUpViewItems()
-        setUpImages()
-
+        #if arch(i386) || arch(x86_64)
+            setUpCollectionViewItems()
+        #endif
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -117,11 +122,10 @@ extension RestaurantContentsViewController: UIViewControllerProtcol {
     func setUpViewItems() {
         collectionViewLayout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: collectionViewLayout)
-        view.addSubview(collectionView)
-        
         locationManager = CLLocationManager()
-        
         mapView = MKMapView()
+        
+        view.addSubview(collectionView)
         view.addSubview(mapView)
     }
 
@@ -136,29 +140,21 @@ extension RestaurantContentsViewController: UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurantInfoArray.count
+        return restaurantImageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        // todo カスタムセルにしたい
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
         cell.backgroundView?.removeFromSuperview()
         
         cell.backgroundColor = UIColor.orange
 
-        let restaurantItem = restaurantInfoArray[indexPath.row]
-        
-        // ぐるなびAPIレスポンスでは2枚の画像urlが返ってくる。1枚目：店のロゴ、2枚目：料理画像 であることが多い。
-        // 2枚目があればセット、なければ1枚目をセットする。
-        if let urlString = restaurantItem.rest.image_url.shop_image2, !urlString.isEmpty, let url = URL(string: urlString) {
-            let image = UIImageView()
-            image.af_setImage(withURL: url)
-            cell.backgroundView = image
-        } else if let urlString = restaurantItem.rest.image_url.shop_image1, !urlString.isEmpty, let url = URL(string: urlString) {
-            let image = UIImageView()
-            image.af_setImage(withURL: url)
-            cell.backgroundView = image
-        }
+        let imageUrl = restaurantImageArray[indexPath.row]
+        let imageView = UIImageView()
+        imageView.af_setImage(withURL: imageUrl)
+        cell.backgroundView = imageView
 
         return cell
     }
@@ -167,29 +163,20 @@ extension RestaurantContentsViewController: UICollectionViewDelegate, UICollecti
 // MARK: - MKMapViewDelegate Implement
 extension RestaurantContentsViewController: MKMapViewDelegate {
 
-//    // MARK: Implement Methods
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//
-//        //アノテーションビューを生成する。
-//        let testPinView = MKPinAnnotationView()
-//
-//        //アノテーションビューに座標、タイトル、サブタイトルを設定する。
-//        testPinView.annotation = annotation
-//
-//        //アノテーションビューに色を設定する。
-//        testPinView.pinTintColor = UIColor.blue
-//
-//        //吹き出しの表示をONにする。
-//        testPinView.canShowCallout = true
-//
-//        return testPinView
-//    }
+    // MARK: Implement Methods
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let pinView = MKPinAnnotationView()
+        pinView.annotation = annotation
+        pinView.pinTintColor = UIColor.blue
+        pinView.canShowCallout = true
+        return pinView
+    }
 
 }
 
 // MARK: - CLLocationManagerDelegate Implement
 extension RestaurantContentsViewController: CLLocationManagerDelegate {
-    
+
     // MARK: Implement Methods
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -200,15 +187,25 @@ extension RestaurantContentsViewController: CLLocationManagerDelegate {
             locationManager.requestWhenInUseAuthorization() // アプリ起動中のみ位置情報を使用するための許諾
         }
     }
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let newLocation = locations.first?.coordinate else {
+        guard var newLocation = locations.first?.coordinate else {
             locationManager.requestLocation()
             return
         }
+        currentLocation.latitude = newLocation.latitude
+        currentLocation.longitude = newLocation.longitude
+        setUpCollectionViewItems()
 
         let radius: CLLocationDistance = 500 // いずれは設定で変更できるように、realmからとってくるようにしたい
-        let region = MKCoordinateRegionMakeWithDistance(newLocation, radius, radius);
+
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            // シュミレータの場合は渋谷駅になるようにしている。
+            newLocation.latitude = 35.658034
+            newLocation.longitude = 139.701636
+        #endif
+
+        let region = MKCoordinateRegionMakeWithDistance(newLocation, radius, radius)
         mapView.setRegion(region, animated: true) // 現在座標を中心に地図を表示
     }
 
@@ -218,16 +215,43 @@ extension RestaurantContentsViewController: CLLocationManagerDelegate {
     
 }
 
-// MARK: - Neswork Function
+// MARK: - Network Function
 extension RestaurantContentsViewController {
 
     // MARK: Fileprivate Methods
-    fileprivate func setUpImages() {
-        // 現在位置を取得しセットする
-        let parameters = SearchRestaurantRequestParameters(latitude: 35.658034, longitude: 139.701636, hit_per_page: 100).parameters
+    fileprivate func setUpCollectionViewItems() {
+
+        #if (arch(i386) || arch(x86_64)) && os(iOS)
+            let latitude = 35.658034
+            let longitude = 139.701636
+        #else
+            let latitude = currentLocation.latitude
+            let longitude = currentLocation.longitude
+        #endif
+        
+        let parameters = SearchRestaurantRequestParameters(latitude: latitude, longitude: longitude, hit_per_page: 100).parameters
+
         NetworkManager().callForSearchRestaurant(parameters) { response in
             self.restaurantInfoArray = response
+            self.setUpImages()
             self.collectionView.reloadData()
+
+            self.removePinsOnView()
+            self.appendPinsOnView()
+        }
+    }
+    
+    // MARK: Private Methods
+    private func setUpImages(){
+        restaurantImageArray = []
+        // ぐるなびAPIレスポンスでは2枚の画像urlが返ってくる。1枚目：店のロゴ、2枚目：料理画像 であることが多い。
+        // 2枚目があれば表示、なければ1枚目を表示できるように配列にURLを格納しておく。画像がない場合は表示しない。
+        for restaurant in restaurantInfoArray {
+            if let urlString = restaurant.rest.image_url.shop_image2, !urlString.isEmpty, let url = URL(string: urlString) {
+                restaurantImageArray.append(url)
+            } else if let urlString = restaurant.rest.image_url.shop_image1, !urlString.isEmpty, let url = URL(string: urlString) {
+                restaurantImageArray.append(url)
+            }
         }
     }
     
@@ -267,19 +291,23 @@ extension RestaurantContentsViewController {
         collectionViewLayout.scrollDirection = UIDeviceOrientationIsLandscape(deviceOrientation) ? .horizontal : .vertical
     }
 
-// ピンを表示、消す処理　あとでレスポンスの中身が整理できたら作成する
-//    fileprivate func appendPinsOnView() {
-////        for location in  {
-////            let annotation = MKPointAnnotation()
-////            annotation.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
-////            restaurantLocations.append(annotation)
-////        }
-//        mapView.addAnnotations(restaurantLocations)
-//    }
-//
-//    fileprivate func removePinsOnView() {
-//        mapView.removeAnnotations(restaurantLocations)
-//    }
+    // MARK: Fileprivate Methods
+    fileprivate func appendPinsOnView() {
+        restaurantLocations = []
+        for item in restaurantInfoArray {
+            let annotation = MKPointAnnotation()
+            let info = item.rest
+            annotation.coordinate = CLLocationCoordinate2DMake(info.latitude, info.longitude)
+            annotation.title = info.name
+//            annotation.subtitle = info.pr.pr_short
+            restaurantLocations.append(annotation)
+        }
+        mapView.addAnnotations(restaurantLocations)
+    }
+
+    fileprivate func removePinsOnView() {
+        mapView.removeAnnotations(restaurantLocations)
+    }
 
 // 位置情報を手動で再取得する場合はこちらを実装したい
 //    // MARK: Fileprivate Methods

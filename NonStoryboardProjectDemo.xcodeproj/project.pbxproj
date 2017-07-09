@@ -47,6 +47,7 @@
 		ECB690031F08EE5100192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690041F08EE5200192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690071F0916B700192BBF /* UIViewControllerProtcol+Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */; };
+		ECE356721F122DDA0098B33D /* SearchRestaurantRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */; };
 		ECE851081F0E57FD00B16014 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE851031F0E57E500B16014 /* Alamofire.framework */; };
 		ECE851091F0E57FD00B16014 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ECE851031F0E57E500B16014 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -98,7 +99,7 @@
 		EC0827451F0EA239002D51CD /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		EC0827471F0EA29A002D51CD /* GurunaviRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GurunaviRequestProtocol.swift; sourceTree = "<group>"; };
 		EC0827491F0EA2D5002D51CD /* UploadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadProtocol.swift; sourceTree = "<group>"; };
-		EC08274B1F0EACE1002D51CD /* SearchRestaurantReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRestaurantReponse.swift; path = NonStoryboardProjectDemo/Classes/Models/Networks/SearchRestaurantReponse.swift; sourceTree = SOURCE_ROOT; };
+		EC08274B1F0EACE1002D51CD /* SearchRestaurantReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRestaurantReponse.swift; path = SearchRestaurantReponse.swift; sourceTree = "<group>"; };
 		EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		EC3D63071F08CF3A00728540 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EC3D630D1F08CF5500728540 /* RestaurantContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantContentsViewController.swift; sourceTree = "<group>"; };
@@ -116,11 +117,11 @@
 		EC3D63421F08D5C400728540 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		EC3D63441F08D5CD00728540 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		EC43E3F11F0B5C5D009B77A6 /* CustomBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBarButtonItem.swift; sourceTree = "<group>"; };
-		EC652E761F11490500D1C18A /* SearchRestaurantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRestaurantModel.swift; path = NonStoryboardProjectDemo/Classes/Models/Networks/SearchRestaurantModel.swift; sourceTree = SOURCE_ROOT; };
+		EC652E761F11490500D1C18A /* SearchRestaurantModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRestaurantModel.swift; path = SearchRestaurantModel.swift; sourceTree = "<group>"; };
 		EC652E781F114F2300D1C18A /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		EC72BAFD1F0D28D500C2F167 /* UIViewController+Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Functions.swift"; sourceTree = "<group>"; };
 		EC76DAC51F0E522C00523DC6 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		EC856EBB1F0FEB7500AE21D5 /* GurunaviErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GurunaviErrorResponse.swift; path = NonStoryboardProjectDemo/Classes/Models/Networks/GurunaviErrorResponse.swift; sourceTree = SOURCE_ROOT; };
+		EC856EBB1F0FEB7500AE21D5 /* GurunaviErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GurunaviErrorResponse.swift; path = GurunaviErrorResponse.swift; sourceTree = "<group>"; };
 		EC91EE911F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC91EE951F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantContentsSettingViewController.swift; sourceTree = "<group>"; };
 		ECB21A481F08B78700A03543 /* NonStoryboardProjectDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NonStoryboardProjectDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +135,7 @@
 		ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonStoryboardProjectDemoUITests.swift; sourceTree = "<group>"; };
 		ECB21A6D1F08B78700A03543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECB690061F0916B700192BBF /* UIViewControllerProtcol+Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewControllerProtcol+Function.swift"; sourceTree = "<group>"; };
+		ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchRestaurantRequestParameters.swift; path = SearchRestaurantRequestParameters.swift; sourceTree = "<group>"; };
 		ECE851031F0E57E500B16014 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,9 +219,9 @@
 		EC0827431F0E9CA1002D51CD /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				EC08274B1F0EACE1002D51CD /* SearchRestaurantReponse.swift */,
 				EC856EBB1F0FEB7500AE21D5 /* GurunaviErrorResponse.swift */,
 				EC652E761F11490500D1C18A /* SearchRestaurantModel.swift */,
+				EC08274B1F0EACE1002D51CD /* SearchRestaurantReponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -332,10 +334,11 @@
 		EC76DAC41F0E520D00523DC6 /* Networks */ = {
 			isa = PBXGroup;
 			children = (
-				EC76DAC51F0E522C00523DC6 /* NetworkManager.swift */,
+				ECE3566E1F122D840098B33D /* Parameters */,
 				EC0827441F0EA201002D51CD /* Protcols */,
 				EC0827401F0E9B9D002D51CD /* Requests */,
 				EC0827431F0E9CA1002D51CD /* Responses */,
+				EC76DAC51F0E522C00523DC6 /* NetworkManager.swift */,
 			);
 			path = Networks;
 			sourceTree = "<group>";
@@ -444,6 +447,15 @@
 				EC3D63021F08CCA900728540 /* SignUp */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ECE3566E1F122D840098B33D /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */,
+			);
+			name = Parameters;
+			path = Parameters;
 			sourceTree = "<group>";
 		};
 		ECF924521F0AA35E004F5EED /* Protcols */ = {
@@ -781,6 +793,7 @@
 				EC3D63221F08CFD300728540 /* UIColor+HEX.swift in Sources */,
 				EC3D632A1F08CFD900728540 /* Utils.swift in Sources */,
 				EC91EE961F0D2581002F4CAA /* RestaurantContentsSettingViewController.swift in Sources */,
+				ECE356721F122DDA0098B33D /* SearchRestaurantRequestParameters.swift in Sources */,
 				EC91EE921F0D1A58002F4CAA /* RestaurantContentsCollectionViewCell.swift in Sources */,
 				EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */,

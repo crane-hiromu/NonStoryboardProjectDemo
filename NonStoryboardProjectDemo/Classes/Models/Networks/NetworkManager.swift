@@ -17,7 +17,7 @@ protocol ApiPrtocol {
 
 struct NetworkManager: ApiPrtocol {
     private let successRange = 200..<300
-    
+
     func callForGurunavi<T, V>(_ request:T, completion: @escaping (Result<V>)  -> Void)
         where T: GurunaviRequestProtocol, V: Mappable, V == T.ResponseType {
             Alamofire.request(request)
