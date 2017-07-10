@@ -51,11 +51,10 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hideNavigaionBar()
         setUpNavigationBar()
         setUpViewItems()
         
-        setBackgroundColor(top: Utils.Color.main, bottom: UIColor.white)
+        setBackgroundGradationColor(top: Utils.Color.main, bottom: UIColor.white)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,11 +64,12 @@ class SignUpViewController: UIViewController {
 
 }
 
-// MARK: - UIViewControllerProtcol
-extension SignUpViewController: UIViewControllerProtcol {
+// MARK: - UIViewControllerProtocol
+extension SignUpViewController: UIViewControllerProtocol {
 
     // MARK: Internal Protcol Methods
     func setUpNavigationBar() {
+        hideNavigaionBar()
         navigationItem.title = R.string.localized.nav_title_signup()
         navigationItem.rightBarButtonItem = CustomBarButtonItem().setClose(self, selector: #selector(self.dismissModalView))
     }

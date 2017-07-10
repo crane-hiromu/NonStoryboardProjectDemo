@@ -18,7 +18,7 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUpToAppendTab(RestaurantContentsViewController(), R.string.localized.tab_title_main(), #imageLiteral(resourceName: "tab_bar_search_icon"))
+        setUpToAppendTab(RestaurantRootViewController(), R.string.localized.tab_title_main(), #imageLiteral(resourceName: "tab_bar_search_icon"))
         setUpToAppendTab(SubContentsViewController(), R.string.localized.tab_title_sub(), #imageLiteral(resourceName: "tab_bar_home_icon"))
         
         setViewControllers(tabs, animated: false)

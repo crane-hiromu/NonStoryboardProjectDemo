@@ -25,8 +25,8 @@ class RestaurantContentsSettingViewController: UIViewController {
 
 }
 
-// MARK: - UIViewControllerProtcol
-extension RestaurantContentsSettingViewController: UIViewControllerProtcol {
+// MARK: - UIViewControllerProtocol
+extension RestaurantContentsSettingViewController: UIViewControllerProtocol {
 
     // MARK: Internal Protcol Methods
     func setUpNavigationBar() {

@@ -1,5 +1,5 @@
 //
-//  RestaurantContentsViewController.swift
+//  RestaurantRootViewController.swift
 //  NonStoryboardProject
 //
 //  Created by T.H on 2017/07/01.
@@ -9,10 +9,9 @@
 import UIKit
 import MapKit
 import SwiftyJSON
-import AlamofireImage
 
 // MARK: - Class
-class RestaurantContentsViewController: UIViewController {
+class RestaurantRootViewController: UIViewController {
 
     // MARK: Fileprivate Instance
     fileprivate var currentLocation = CLLocationCoordinate2D()
@@ -24,7 +23,8 @@ class RestaurantContentsViewController: UIViewController {
     // MARK: Fileprivate ViewItems
     fileprivate var collectionViewLayout: UICollectionViewFlowLayout! {
         didSet {
-            let edgeLength = view.frame.width / 3 - 10 // 程よい隙間を設定するために-10を使用。端末ごとにテストし問題なければこの値のままで。
+            let edgeLength = view.frame.width/3 - 7 // 程よい隙間を設定するために-7を使用。端末ごとにテストし問題なければこの値のままで。
+            // let edgeLength = view.frame.width/2 - 5 // 設定で並び順を変えられるようにしたい
             collectionViewLayout.scrollDirection = .vertical
             collectionViewLayout.itemSize = CGSize(width: edgeLength, height: edgeLength)
         }
@@ -106,8 +106,8 @@ class RestaurantContentsViewController: UIViewController {
     
 }
 
-// MARK: - UIViewControllerProtcol
-extension RestaurantContentsViewController: UIViewControllerProtcol {
+// MARK: - UIViewControllerProtocol
+extension RestaurantRootViewController: UIViewControllerProtocol {
 
     // MARK: Protcol Methods
     func setUpNavigationBar() {
@@ -132,11 +132,15 @@ extension RestaurantContentsViewController: UIViewControllerProtcol {
 }
 
 // MARK: - UICollectionView Implement
-extension RestaurantContentsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension RestaurantRootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     // MARK: Implement Methods
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("選択しました: \(indexPath.row)")
+        let viewController = RestaurantModalViewController()
+        viewController.imageUrl = restaurantImageArray[indexPath.row]
+        viewController.modalPresentationStyle = .overCurrentContext
+        viewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        showModalView(nextView: viewController, animation: .crossDissolve)
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -148,26 +152,28 @@ extension RestaurantContentsViewController: UICollectionViewDelegate, UICollecti
         // todo カスタムセルにしたい
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
         cell.backgroundView?.removeFromSuperview()
-        
-        cell.backgroundColor = UIColor.orange
 
         let imageUrl = restaurantImageArray[indexPath.row]
-        let imageView = UIImageView()
-        imageView.af_setImage(withURL: imageUrl)
-        cell.backgroundView = imageView
+        cell.backgroundView = UIImageView().getViewByUrl(url: imageUrl)
+        
+        
+        //色の判定もできればしたい
+//        let restaurant = restaurantInfoArray[indexPath.row]
+//        restaurant.rest.id
+        cell.backgroundColor = .orange
 
         return cell
     }
 }
 
 // MARK: - MKMapViewDelegate Implement
-extension RestaurantContentsViewController: MKMapViewDelegate {
+extension RestaurantRootViewController: MKMapViewDelegate {
 
     // MARK: Implement Methods
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pinView = MKPinAnnotationView()
         pinView.annotation = annotation
-        pinView.pinTintColor = UIColor.blue
+        pinView.pinTintColor = .blue
         pinView.canShowCallout = true
         return pinView
     }
@@ -175,7 +181,7 @@ extension RestaurantContentsViewController: MKMapViewDelegate {
 }
 
 // MARK: - CLLocationManagerDelegate Implement
-extension RestaurantContentsViewController: CLLocationManagerDelegate {
+extension RestaurantRootViewController: CLLocationManagerDelegate {
 
     // MARK: Implement Methods
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -216,7 +222,7 @@ extension RestaurantContentsViewController: CLLocationManagerDelegate {
 }
 
 // MARK: - Network Function
-extension RestaurantContentsViewController {
+extension RestaurantRootViewController {
 
     // MARK: Fileprivate Methods
     fileprivate func setUpCollectionViewItems() {
@@ -244,6 +250,7 @@ extension RestaurantContentsViewController {
     // MARK: Private Methods
     private func setUpImages(){
         restaurantImageArray = []
+
         // ぐるなびAPIレスポンスでは2枚の画像urlが返ってくる。1枚目：店のロゴ、2枚目：料理画像 であることが多い。
         // 2枚目があれば表示、なければ1枚目を表示できるように配列にURLを格納しておく。画像がない場合は表示しない。
         for restaurant in restaurantInfoArray {
@@ -258,7 +265,7 @@ extension RestaurantContentsViewController {
 }
 
 // MARK: - Function
-extension RestaurantContentsViewController {
+extension RestaurantRootViewController {
 
     // MARK: Selector Methods
     func showLocationView() {
@@ -282,7 +289,7 @@ extension RestaurantContentsViewController {
     }
     
     func showSettingModalView() {
-        showModalView(nextView: RestaurantContentsSettingViewController(), animation: .crossDissolve)
+        showModalNavView(nextView: RestaurantContentsSettingViewController(), animation: .crossDissolve)
     }
 
     // MARK: Selector Notificaiton Methods
@@ -299,7 +306,6 @@ extension RestaurantContentsViewController {
             let info = item.rest
             annotation.coordinate = CLLocationCoordinate2DMake(info.latitude, info.longitude)
             annotation.title = info.name
-//            annotation.subtitle = info.pr.pr_short
             restaurantLocations.append(annotation)
         }
         mapView.addAnnotations(restaurantLocations)

@@ -1,5 +1,5 @@
 //
-//  UIColor+HEX.swift
+//  UIColor+Extensions.swift
 //  NonStoryboardProject
 //
 //  Created by T.H on 2017/07/01.

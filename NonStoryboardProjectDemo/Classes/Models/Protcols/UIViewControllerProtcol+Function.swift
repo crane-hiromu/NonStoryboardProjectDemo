@@ -1,5 +1,5 @@
 //
-//  UIViewControllerProtcol.swift
+//  UIViewControllerProtocol.swift
 //  NonStoryboardProjectDemo
 //
 //  Created by T.H on 2017/07/02.
@@ -7,7 +7,7 @@
 //
 
 //MARK: - Protcol
-protocol UIViewControllerProtcol {
+protocol UIViewControllerProtocol {
     func setUpNavigationBar()
     func setUpViewItems()
 }
