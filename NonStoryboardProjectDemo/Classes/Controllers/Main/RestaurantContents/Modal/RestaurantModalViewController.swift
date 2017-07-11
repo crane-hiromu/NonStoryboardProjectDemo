@@ -60,8 +60,8 @@ class RestaurantModalViewController: UIViewController {
             dismissModalView()
             return
         }
-
-        print("touch image")
+        
+        // 画像タップ時の挙動
 
     }
 
@@ -84,7 +84,6 @@ extension RestaurantModalViewController: UIViewControllerProtocol {
         uiImageView = UIImageView(frame: imageViewRect)
 
         view.addSubview(uiImageView)
-//        view.addGestureRecognizer(tapGestureRecognizer)
     }
 }
 
