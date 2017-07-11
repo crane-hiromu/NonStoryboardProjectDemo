@@ -6,8 +6,8 @@
 //  Copyright © 2017年 T.H. All rights reserved.
 //
 
-//MARK: - Protcol
-protocol UIViewControllerProtocol {
+//MARK: - Protocol
+protocol UIViewControllerProtocol: class {
     func setUpNavigationBar()
     func setUpViewItems()
 }
