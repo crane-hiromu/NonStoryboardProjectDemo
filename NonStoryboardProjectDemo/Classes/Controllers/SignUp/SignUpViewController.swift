@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController {
         setUpNavigationBar()
         setUpViewItems()
         
-        setBackgroundGradationColor(top: Utils.Color.main, bottom: UIColor.white)
+        setBackgroundGradationColor(top: .main, bottom: .white)
     }
 
     override func didReceiveMemoryWarning() {

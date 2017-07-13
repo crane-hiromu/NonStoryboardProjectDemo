@@ -7,12 +7,10 @@
 */
 
 /* TabBar */
-"tab_title_main" = "メイン";
-"tab_title_sub" = "サブ";
+"tab_title_search" = "検索";
+"tab_title_home" = "ホーム";
 
 /* NavigationBar */
-"nav_title_restaurant_photos" = "お店一覧";
-"nav_title_restaurant_locations" = "マップ";
 "nav_title_sub" = "サブ";
 "nav_title_signup" = "サインアップ";
 "nav_title_signin" = "サインイン";

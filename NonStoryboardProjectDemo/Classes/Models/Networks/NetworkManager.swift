@@ -56,7 +56,7 @@ struct NetworkManager: ApiPrtocol {
                         completion(convertArray)
                     }
 
-            }
+        }
     }
 
     private func convertJson(json: JSON) -> [SearchRestaurantModel] {

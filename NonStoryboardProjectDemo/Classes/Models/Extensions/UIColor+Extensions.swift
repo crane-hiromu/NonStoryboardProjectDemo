@@ -20,5 +20,8 @@ extension UIColor {
         let blue = CGFloat(hex & 0x0000FF) / denominator
         self.init(red: red, green: green, blue: blue, alpha: CGFloat(alpha))
     }
+    
+    // エラー回避のため @nonobjc を付与する
+    @nonobjc static let main = UIColor(hex: 0xF7941E)
 
 }

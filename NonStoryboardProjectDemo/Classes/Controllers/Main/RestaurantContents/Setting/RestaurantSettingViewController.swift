@@ -1,5 +1,5 @@
 //
-//  RestaurantContentsSettingViewController.swift
+//  RestaurantSettingViewController.swift
 //  NonStoryboardProjectDemo
 //
 //  Created by T.H on 2017/07/05.
@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - Class
-class RestaurantContentsSettingViewController: UIViewController {
+class RestaurantSettingViewController: UIViewController {
 
     // MARK: Override Methods
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class RestaurantContentsSettingViewController: UIViewController {
 }
 
 // MARK: - UIViewControllerProtocol
-extension RestaurantContentsSettingViewController: UIViewControllerProtocol {
+extension RestaurantSettingViewController: UIViewControllerProtocol {
 
     // MARK: Internal Protcol Methods
     func setUpNavigationBar() {
@@ -42,7 +42,7 @@ extension RestaurantContentsSettingViewController: UIViewControllerProtocol {
 }
 
 // MARK: - Functions
-extension RestaurantContentsSettingViewController {
+extension RestaurantSettingViewController {
     
     // MARK: Selector Methods
     func resetSettings () {

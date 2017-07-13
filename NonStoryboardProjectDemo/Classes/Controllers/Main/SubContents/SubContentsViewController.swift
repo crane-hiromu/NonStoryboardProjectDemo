@@ -18,7 +18,7 @@ class SubContentsViewController: UIViewController {
         setUpNavigationBar()
         setUpViewItems()
 
-        setBackgroundGradationColor(top: Utils.Color.main, bottom: UIColor.black)
+        setBackgroundGradationColor(top: .main, bottom: .black)
     }
     
     override func didReceiveMemoryWarning() {

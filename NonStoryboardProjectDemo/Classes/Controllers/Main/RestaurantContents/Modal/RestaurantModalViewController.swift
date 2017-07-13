@@ -12,27 +12,19 @@ import AlamofireImage
 // MARK: - Class
 class RestaurantModalViewController: UIViewController {
     
-    // MARK: Internal Instance
+    // MARK: Internal Instances
     var imageUrl: URL! // nilチェックしている。
     
-    // MARK: Fileprivate Instance
-    fileprivate var imageViewRect: CGRect! {
-        didSet {
-            let width = view.frame.width
-            let height = view.frame.height
-
-            imageViewRect.origin.x = 0
-            imageViewRect.origin.y = height/2 - width/2
-            imageViewRect.size.width = width
-            imageViewRect.size.height = width
-        }
-    }
-    
+    // MARK: Fileprivate Instances
     fileprivate var uiImageView: UIImageView! {
         didSet {
             if imageUrl == nil { dismissModalView() }
             uiImageView.getViewByUrl(url: imageUrl)
             uiImageView.contentMode = .scaleAspectFit
+            
+            let width = view.frame.width
+            let height = view.frame.height
+            uiImageView.frame = CGRect(x: 0, y: height/2-width/2, width: width, height: width)
         }
     }
 
@@ -80,9 +72,7 @@ extension RestaurantModalViewController: UIViewControllerProtocol {
     }
     
     func setUpViewItems() {
-        imageViewRect = CGRect()
-        uiImageView = UIImageView(frame: imageViewRect)
-
+        uiImageView = UIImageView()
         view.addSubview(uiImageView)
     }
 }

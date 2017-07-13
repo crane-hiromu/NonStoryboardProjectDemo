@@ -1,5 +1,5 @@
 //
-//  RestaurantContentsCollectionViewCell.swift
+//  RestaurantCollectionViewCell.swift
 //  NonStoryboardProjectDemo
 //
 //  Created by T.H on 2017/07/05.
@@ -9,6 +9,6 @@
 import UIKit
 
 // MARK: - Class
-class RestaurantContentsCollectionViewCell: UICollectionViewCell {
+class RestaurantCollectionViewCell: UICollectionViewCell {
     
 }

@@ -20,7 +20,7 @@ struct CustomBarButtonItem {
         return UIBarButtonItem(image: image, style: style, target: view, action: selector)
     }
     
-    
+
     /* --- デフォルト テキストボタン --- */
     
     /// ナビゲーションバーにCancelボタンを設定
@@ -73,29 +73,30 @@ struct CustomBarButtonItem {
     
 
     /* --- カスタム アイコンボタン --- */
+    /// ナビゲーションバーにロケーションアイコンを設定
     func setLocation(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
-        return UIBarButtonItem(image: .locationIcon, style: .plain, target: view, action: selector)
+        return UIBarButtonItem(image: #imageLiteral(resourceName: "nav_location_icon"), style: .plain, target: view, action: selector)
     }
-    
+
+    /// ナビゲーションバーにフォトアイコンを設定
     func setPhoto(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
-        return UIBarButtonItem(image: .photoIcon, style: .plain, target: view, action: selector)
+        return UIBarButtonItem(image: #imageLiteral(resourceName: "nav_photo_icon"), style: .plain, target: view, action: selector)
     }
     
+    /// ナビゲーションバーにスクリーンアイコンを設定
+    func setScreen(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
+        return UIBarButtonItem(image: #imageLiteral(resourceName: "nav_screen_icon"), style: .plain, target: view, action: selector)
+    }
+    
+    /// ナビゲーションバーにセッティングアイコンを設定
     func setSetting(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
-        return UIBarButtonItem(image: .settingIcon, style: .plain, target: view, action: selector)
+        return UIBarButtonItem(image: #imageLiteral(resourceName: "nav_setting_icon"), style: .plain, target: view, action: selector)
     }
     
+    /// ナビゲーションバーにサーチアイコンを設定
     func setSearch(_ view: UIViewController, selector: Selector) -> UIBarButtonItem {
-        return UIBarButtonItem(image: .searchIcon, style: .plain, target: view, action: selector)
+        return UIBarButtonItem(image: #imageLiteral(resourceName: "nav_search_icon"), style: .plain, target: view, action: selector)
     }
 
 
-}
-
-// MARK: - カスタムアイコンボタンの画像を一元管理
-fileprivate extension UIImage {
-    static let locationIcon = #imageLiteral(resourceName: "nav_location_icon")
-    static let photoIcon = #imageLiteral(resourceName: "nav_photo_icon")
-    static let settingIcon = #imageLiteral(resourceName: "nav_setting_icon")
-    static let searchIcon = #imageLiteral(resourceName: "nav_search_icon")
 }

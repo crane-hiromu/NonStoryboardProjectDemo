@@ -13,7 +13,7 @@ import SwiftyJSON
 // MARK: - Class
 class RestaurantRootViewController: UIViewController {
 
-    // MARK: Fileprivate Instance
+    // MARK: Fileprivate Instances
     fileprivate var currentLocation = CLLocationCoordinate2D()
     fileprivate var restaurantInfoArray: [SearchRestaurantModel] = []
     fileprivate var restaurantImageArray: [URL] = []
@@ -23,8 +23,11 @@ class RestaurantRootViewController: UIViewController {
     // MARK: Fileprivate ViewItems
     fileprivate var collectionViewLayout: UICollectionViewFlowLayout! {
         didSet {
-            let edgeLength = view.frame.width/3 - 7 // 程よい隙間を設定するために-7を使用。端末ごとにテストし問題なければこの値のままで。
-            // let edgeLength = view.frame.width/2 - 5 // 設定で並び順を変えられるようにしたい
+            let edgeLength = view.frame.width/3 - 12 // 程よい隙間を設定するために-7を使用。端末ごとにテストし問題なければこの値のままで。
+            // let edgeLength = view.frame.width/2 - 10 // 設定で並び順を変えられるようにしたい
+            collectionViewLayout.minimumLineSpacing = 10
+            collectionViewLayout.sectionInset = UIEdgeInsetsMake(5,5,5,5)
+
             collectionViewLayout.scrollDirection = .vertical
             collectionViewLayout.itemSize = CGSize(width: edgeLength, height: edgeLength)
         }
@@ -49,6 +52,13 @@ class RestaurantRootViewController: UIViewController {
         didSet {
             photoButton = CustomBarButtonItem().setPhoto(self, selector: #selector(self.showPhotoView))
             photoButton.tintColor = .orange
+        }
+    }
+    
+    fileprivate var screenButton: UIBarButtonItem! {
+        didSet {
+            screenButton = CustomBarButtonItem().setScreen(self, selector: #selector(self.showScreenModalView))
+            screenButton.tintColor = .gray // 初期表示はgrayに設定。タップ時にはyellowをセットする。
         }
     }
     
@@ -86,7 +96,7 @@ class RestaurantRootViewController: UIViewController {
             setUpCollectionViewItems()
         #endif
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -112,10 +122,11 @@ extension RestaurantRootViewController: UIViewControllerProtocol {
     // MARK: Protcol Methods
     func setUpNavigationBar() {
         settingButton = UIBarButtonItem()
+        screenButton = UIBarButtonItem()
         locationButton = UIBarButtonItem()
         photoButton = UIBarButtonItem()
 
-        navigationItem.leftBarButtonItem = settingButton
+        navigationItem.leftBarButtonItems = [settingButton, screenButton]
         navigationItem.rightBarButtonItems = [locationButton, photoButton]
     }
 
@@ -127,6 +138,8 @@ extension RestaurantRootViewController: UIViewControllerProtocol {
         
         view.addSubview(collectionView)
         view.addSubview(mapView)
+        
+        setBackgroundGradationColor(top: .main, bottom: .white)
     }
 
 }
@@ -138,8 +151,7 @@ extension RestaurantRootViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController = RestaurantModalViewController()
         viewController.imageUrl = restaurantImageArray[indexPath.row]
-        viewController.modalPresentationStyle = .overCurrentContext
-        viewController.view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        viewController.setBackgroundClear(alpha: 0.5)
         showModalView(nextView: viewController, animation: .crossDissolve)
     }
 
@@ -269,8 +281,6 @@ extension RestaurantRootViewController {
 
     // MARK: Selector Methods
     func showLocationView() {
-        navigationItem.title = R.string.localized.nav_title_restaurant_locations()
-
         locationButton.tintColor = .blue
         photoButton.tintColor = .gray
 
@@ -279,8 +289,6 @@ extension RestaurantRootViewController {
     }
 
     func showPhotoView() {
-        navigationItem.title = R.string.localized.nav_title_restaurant_photos()
-
         locationButton.tintColor = .gray
         photoButton.tintColor = .orange
 
@@ -288,8 +296,15 @@ extension RestaurantRootViewController {
         mapView?.isHidden = true
     }
     
+    func showScreenModalView() {
+        screenButton.tintColor = .yellow
+        let viewController = RestaurantScreenViewController()
+        viewController.setBackgroundClear()
+        showModalView(nextView: viewController)
+    }
+    
     func showSettingModalView() {
-        showModalNavView(nextView: RestaurantContentsSettingViewController(), animation: .crossDissolve)
+        showModalNavView(nextView: RestaurantSettingViewController(), animation: .crossDissolve)
     }
 
     // MARK: Selector Notificaiton Methods
