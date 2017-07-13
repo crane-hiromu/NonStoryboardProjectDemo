@@ -89,12 +89,18 @@ class RestaurantRootViewController: UIViewController {
     // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpNavigationBar()
         setUpViewItems()
         #if arch(i386) || arch(x86_64)
             setUpCollectionViewItems()
         #endif
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        screenButton.tintColor = .gray
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -46,9 +46,7 @@ class RestaurantScreenViewController: UIViewController {
         guard let location = touches.first?.location(in: view) else { return }
 
         if (location.y <= cardHeight*(cardSeparator-1)) {
-            dismissModalViewAndCallback() {
-                
-            }
+            dismiss(animated: true, completion: nil)
         }
     }
 

@@ -31,11 +31,6 @@ extension UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    /// present()で遷移した場合のモーダルを破棄し、コールバック関数を実行する
-    func dismissModalViewAndCallback(completion: @escaping () -> Void) {
-        dismiss(animated: true, completion: completion)
-    }
-    
     /// 背景をクリアに設定（ビューを生成する前に）
     func setBackgroundClear(alpha: CGFloat = 0) {
         modalPresentationStyle = .overCurrentContext
