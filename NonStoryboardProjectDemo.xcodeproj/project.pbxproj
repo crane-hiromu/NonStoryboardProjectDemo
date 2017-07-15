@@ -16,10 +16,12 @@
 		EC0827481F0EA29A002D51CD /* GurunaviRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0827471F0EA29A002D51CD /* GurunaviRequestProtocol.swift */; };
 		EC08274A1F0EA2D5002D51CD /* UploadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0827491F0EA2D5002D51CD /* UploadProtocol.swift */; };
 		EC08274C1F0EACE1002D51CD /* SearchRestaurantReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC08274B1F0EACE1002D51CD /* SearchRestaurantReponse.swift */; };
+		EC095CD61F19E3650023A6FA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC095CD51F19E3650023A6FA /* UIView+Extensions.swift */; };
+		EC095CD91F19E4F30023A6FA /* RestaurantListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC095CD81F19E4F30023A6FA /* RestaurantListTableViewCell.swift */; };
 		EC1CDBCC1F08DEEA00E1855C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63071F08CF3A00728540 /* MainTabBarController.swift */; };
 		EC3D630E1F08CF5500728540 /* RestaurantRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D630D1F08CF5500728540 /* RestaurantRootViewController.swift */; };
-		EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */; };
+		EC3D63121F08CF5E00728540 /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63111F08CF5E00728540 /* RestaurantListViewController.swift */; };
 		EC3D63161F08CF8E00728540 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63151F08CF8E00728540 /* SignUpViewController.swift */; };
 		EC3D63221F08CFD300728540 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63211F08CFD300728540 /* UIColor+Extensions.swift */; };
 		EC3D632A1F08CFD900728540 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D63261F08CFD900728540 /* Utils.swift */; };
@@ -48,6 +50,7 @@
 		ECB690031F08EE5100192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690041F08EE5200192BBF /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */; };
 		ECB690071F0916B700192BBF /* UIViewControllerProtcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol.swift */; };
+		ECE154FD1F187D6200E8B084 /* RestaurantList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE154FC1F187D6200E8B084 /* RestaurantList.storyboard */; };
 		ECE356721F122DDA0098B33D /* SearchRestaurantRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */; };
 		ECE851081F0E57FD00B16014 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE851031F0E57E500B16014 /* Alamofire.framework */; };
 		ECE851091F0E57FD00B16014 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ECE851031F0E57E500B16014 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -103,10 +106,12 @@
 		EC0827471F0EA29A002D51CD /* GurunaviRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GurunaviRequestProtocol.swift; sourceTree = "<group>"; };
 		EC0827491F0EA2D5002D51CD /* UploadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadProtocol.swift; sourceTree = "<group>"; };
 		EC08274B1F0EACE1002D51CD /* SearchRestaurantReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRestaurantReponse.swift; sourceTree = "<group>"; };
+		EC095CD51F19E3650023A6FA /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		EC095CD81F19E4F30023A6FA /* RestaurantListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListTableViewCell.swift; sourceTree = "<group>"; };
 		EC1CDBCB1F08DEEA00E1855C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		EC3D63071F08CF3A00728540 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		EC3D630D1F08CF5500728540 /* RestaurantRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantRootViewController.swift; sourceTree = "<group>"; };
-		EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubContentsViewController.swift; sourceTree = "<group>"; };
+		EC3D63111F08CF5E00728540 /* RestaurantListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
 		EC3D63151F08CF8E00728540 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EC3D63211F08CFD300728540 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		EC3D63261F08CFD900728540 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -139,6 +144,7 @@
 		ECB21A6B1F08B78700A03543 /* NonStoryboardProjectDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonStoryboardProjectDemoUITests.swift; sourceTree = "<group>"; };
 		ECB21A6D1F08B78700A03543 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECB690061F0916B700192BBF /* UIViewControllerProtcol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerProtcol.swift; sourceTree = "<group>"; };
+		ECE154FC1F187D6200E8B084 /* RestaurantList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RestaurantList.storyboard; sourceTree = "<group>"; };
 		ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRestaurantRequestParameters.swift; sourceTree = "<group>"; };
 		ECE851031F0E57E500B16014 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ECFFADCE1F13AE30009F478C /* RestaurantModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantModalViewController.swift; sourceTree = "<group>"; };
@@ -243,6 +249,14 @@
 			path = Protcols;
 			sourceTree = "<group>";
 		};
+		EC095CD71F19E45D0023A6FA /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				EC095CD81F19E4F30023A6FA /* RestaurantListTableViewCell.swift */,
+			);
+			name = Table;
+			sourceTree = "<group>";
+		};
 		EC3D62FF1F08CBE300728540 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				EC3D630B1F08CF4100728540 /* RestaurantContents */,
-				EC3D630C1F08CF4900728540 /* SubContents */,
+				EC3D630C1F08CF4900728540 /* RestaurantList */,
 				EC3D63071F08CF3A00728540 /* MainTabBarController.swift */,
 			);
 			path = Main;
@@ -300,6 +314,7 @@
 				EC3D63211F08CFD300728540 /* UIColor+Extensions.swift */,
 				ECFFADD01F13CF9D009F478C /* UIImageView+Extensions.swift */,
 				EC72BAFD1F0D28D500C2F167 /* UIViewController+Extensions.swift */,
+				EC095CD51F19E3650023A6FA /* UIView+Extensions.swift */,
 			);
 			name = Extensions;
 			path = Models/Extensions;
@@ -323,11 +338,14 @@
 			path = RestaurantContents;
 			sourceTree = "<group>";
 		};
-		EC3D630C1F08CF4900728540 /* SubContents */ = {
+		EC3D630C1F08CF4900728540 /* RestaurantList */ = {
 			isa = PBXGroup;
 			children = (
-				EC3D63111F08CF5E00728540 /* SubContentsViewController.swift */,
+				EC095CD71F19E45D0023A6FA /* Table */,
+				EC3D63111F08CF5E00728540 /* RestaurantListViewController.swift */,
+				ECE154FC1F187D6200E8B084 /* RestaurantList.storyboard */,
 			);
+			name = RestaurantList;
 			path = SubContents;
 			sourceTree = "<group>";
 		};
@@ -618,6 +636,7 @@
 			files = (
 				EC3D63321F08D3E100728540 /* Localized.strings in Resources */,
 				ECB21A531F08B78700A03543 /* Assets.xcassets in Resources */,
+				ECE154FD1F187D6200E8B084 /* RestaurantList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,11 +841,13 @@
 				EC3D63221F08CFD300728540 /* UIColor+Extensions.swift in Sources */,
 				EC3D632A1F08CFD900728540 /* Utils.swift in Sources */,
 				EC91EE961F0D2581002F4CAA /* RestaurantSettingViewController.swift in Sources */,
+				EC095CD91F19E4F30023A6FA /* RestaurantListTableViewCell.swift in Sources */,
 				ECE356721F122DDA0098B33D /* SearchRestaurantRequestParameters.swift in Sources */,
 				EC91EE921F0D1A58002F4CAA /* RestaurantCollectionViewCell.swift in Sources */,
 				EC3D63081F08CF3A00728540 /* MainTabBarController.swift in Sources */,
 				ECFFADD11F13CF9D009F478C /* UIImageView+Extensions.swift in Sources */,
-				EC3D63121F08CF5E00728540 /* SubContentsViewController.swift in Sources */,
+				EC095CD61F19E3650023A6FA /* UIView+Extensions.swift in Sources */,
+				EC3D63121F08CF5E00728540 /* RestaurantListViewController.swift in Sources */,
 				EC3D630E1F08CF5500728540 /* RestaurantRootViewController.swift in Sources */,
 				EC856EBC1F0FEB7500AE21D5 /* GurunaviErrorResponse.swift in Sources */,
 				EC43E3F21F0B5C5D009B77A6 /* CustomBarButtonItem.swift in Sources */,

@@ -17,10 +17,14 @@ class MainTabBarController: UITabBarController {
     // MARK: Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setUpToAppendTab(RestaurantRootViewController(), R.string.localized.tab_title_search(), #imageLiteral(resourceName: "tab_bar_search_icon"))
-        setUpToAppendTab(SubContentsViewController(), R.string.localized.tab_title_home(), #imageLiteral(resourceName: "tab_bar_home_icon"))
-        
+
+        // こちらのタブはStoryBoardを導入するために、nilチェック処理が入る
+        if let restaurantListViewController = R.storyboard.restaurantList.instantiateInitialViewController() {
+            setUpToAppendTab(restaurantListViewController, R.string.localized.tab_title_home(), #imageLiteral(resourceName: "tab_bar_home_icon"))
+        }
+
         setViewControllers(tabs, animated: false)
     }
     

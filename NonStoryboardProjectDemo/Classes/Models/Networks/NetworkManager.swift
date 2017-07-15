@@ -55,7 +55,6 @@ struct NetworkManager: ApiPrtocol {
                     DispatchQueue.main.async {
                         completion(convertArray)
                     }
-
         }
     }
 
