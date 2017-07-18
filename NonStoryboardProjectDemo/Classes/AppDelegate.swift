@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.rootViewController = MainTabBarController()
             window.makeKeyAndVisible()
         }
+        
+        setUpNetworkActivityIndicator()
         
         return true
     }
@@ -50,3 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+// MARK: - Functions
+extension AppDelegate {
+
+    fileprivate func setUpNetworkActivityIndicator() {
+        let network = NetworkActivityIndicatorManager.shared
+        network.isEnabled = true
+        network.startDelay = 0
+        network.completionDelay = 0.5
+    }
+    
+}

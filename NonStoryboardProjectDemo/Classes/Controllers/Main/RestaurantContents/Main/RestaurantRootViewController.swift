@@ -150,6 +150,8 @@ extension RestaurantRootViewController: UIViewControllerProtocol {
 
 }
 
+import Nuke
+
 // MARK: - UICollectionView Implement
 extension RestaurantRootViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -172,8 +174,17 @@ extension RestaurantRootViewController: UICollectionViewDelegate, UICollectionVi
         cell.backgroundView?.removeFromSuperview()
 
         let imageUrl = restaurantImageArray[indexPath.row]
-        cell.backgroundView = UIImageView().getViewByUrl(url: imageUrl)
+//        cell.backgroundView = UIImageView().setImageByAlamofire(with: imageUrl)
+//        cell.backgroundView = UIImageView().setImageByNuke(with: imageUrl)
         
+        let start = NSDate()
+        let imageView = UIImageView()
+        imageView.setImageBySDWebImage(with: imageUrl) { image in
+            imageView.image = image
+            let elapsed = NSDate().timeIntervalSince(start as Date)
+            print(elapsed)
+        }
+        cell.backgroundView = imageView
         
         //色の判定もできればしたい
 //        let restaurant = restaurantInfoArray[indexPath.row]

@@ -1,7 +1,25 @@
+# Alamofire
 github "Alamofire/Alamofire"
 github "Alamofire/AlamofireImage"
-github "SwiftyJSON/SwiftyJSON"
+github "Alamofire/AlamofireNetworkActivityIndicator" ~> 2.2
+
+# Nuke
+github "kean/Nuke"
+github "kean/Nuke-Alamofire-Plugin"
+
+# Storage
 github "realm/realm-cocoa"
+github "kishikawakatsumi/KeychainAccess"
+
+# Helper
 github "mac-cain13/R.swift.Library"
 github "ReactiveX/RxSwift"
+github "SwiftyJSON/SwiftyJSON"
+
+# Image
+github "onevcat/Kingfisher" ~> 3.10.3
+github "rs/SDWebImage"
+
+
+# Indicator
 github "SVProgressHUD/SVProgressHUD"

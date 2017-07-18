@@ -6,8 +6,12 @@
 //  Copyright © 2017年 T.H. All rights reserved.
 //
 
+import Alamofire
+
 /// 'ぐるなびAPI'のレスポンスのキー名をそのまま使用しているため、スネークケースのものがある
 class SearchRestaurantModel {
+    typealias ModelType = Parameters
+    
     var rest: RestaurantInfo = RestaurantInfo()
     
     // 以下、レスポンスには含まれない情報、アプリで管理するもの

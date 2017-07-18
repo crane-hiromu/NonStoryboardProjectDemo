@@ -31,9 +31,10 @@ class RestaurantListTableViewCell: UITableViewCell {
 
         // 画像２があればセットし、なければ画像１をセットする
         if let urlString = restaurant.image_url.shop_image2, !urlString.isEmpty, let url = URL(string: urlString) {
-            restaurantIcon = UIImageView().getViewByUrl(url: url)
+            restaurantIcon.setImageByAlamofire(with: url) { [weak self] in self?.restaurantIcon.image = $0 }
+
         } else if let urlString = restaurant.image_url.shop_image1, !urlString.isEmpty, let url = URL(string: urlString) {
-            restaurantIcon = UIImageView().getViewByUrl(url: url)
+            restaurantIcon.setImageByAlamofire(with: url) { [weak self] in self?.restaurantIcon.image = $0 }
         }
 
         restaurantTitle.text = restaurant.name

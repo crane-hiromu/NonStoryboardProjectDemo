@@ -13,6 +13,8 @@ import SwiftyJSON
 protocol ApiPrtocol {
     func callForGurunavi<T, V>(_ request:T, completion: @escaping (Result<V>)  -> Void)
         where T: GurunaviRequestProtocol, V: Mappable, V == T.ResponseType
+    
+    func callForSearchRestaurant(_ parameters: Parameters, completion: @escaping ([SearchRestaurantModel]) -> Void)
 }
 
 struct NetworkManager: ApiPrtocol {
@@ -44,17 +46,20 @@ struct NetworkManager: ApiPrtocol {
         Alamofire.request(baseUrl + searchPath, parameters: parameters)
                 .validate(statusCode: successRange)
                 .responseJSON { response in
-                    guard let result = response.result.value else { return }
-                    
+                    if response.error == nil { // Success
+                        let json = JSON(response.data)
+                        let convertArray = self.convertJson(json: json)
+                        
+                        DispatchQueue.main.async {
+                            completion(convertArray)
+                        }
+                    } else { // Failure
+                        DispatchQueue.main.async {
+                            completion([])
+                        }
+                    }
                     // いずれmapperを試すために残しておく
                     // var item = Mapper<SearchRestaurantResponse>().map(JSON: result as! [String : Any])
-
-                    let json = JSON(result)
-                    let convertArray = self.convertJson(json: json)
-                    
-                    DispatchQueue.main.async {
-                        completion(convertArray)
-                    }
         }
     }
 

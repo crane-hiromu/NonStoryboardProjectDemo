@@ -19,7 +19,7 @@ class RestaurantModalViewController: UIViewController {
     fileprivate var uiImageView: UIImageView! {
         didSet {
             if imageUrl == nil { dismissModalView() }
-            uiImageView.getViewByUrl(url: imageUrl)
+            uiImageView.setImageByAlamofire(with: imageUrl) { [weak self] in self?.uiImageView.image = $0 }
             uiImageView.contentMode = .scaleAspectFit
             
             let width = view.frame.width
