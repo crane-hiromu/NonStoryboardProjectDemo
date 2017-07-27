@@ -9,6 +9,7 @@
 import Alamofire
 import ObjectMapper
 import SwiftyJSON
+import AlamofireObjectMapper
 
 protocol ApiPrtocol {
     func callForGurunavi<T, V>(_ request:T, completion: @escaping (Result<V>)  -> Void)

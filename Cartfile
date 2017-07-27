@@ -6,6 +6,7 @@ github "Alamofire/AlamofireNetworkActivityIndicator" ~> 2.2
 # Nuke
 github "kean/Nuke"
 github "kean/Nuke-Alamofire-Plugin"
+github "kean/Preheat"
 
 # Storage
 github "realm/realm-cocoa"
@@ -19,7 +20,6 @@ github "SwiftyJSON/SwiftyJSON"
 # Image
 github "onevcat/Kingfisher" ~> 3.10.3
 github "rs/SDWebImage"
-
 
 # Indicator
 github "SVProgressHUD/SVProgressHUD"

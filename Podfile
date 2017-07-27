@@ -4,6 +4,7 @@ platform :ios, '8.0'
 def shared_library
     # Macをserrieにupdateしたらcartfileで管理する（現状エラーになる）
     pod 'ObjectMapper'
+    pod 'AlamofireObjectMapper'
 end
 
 target 'NonStoryboardProjectDemo’ do

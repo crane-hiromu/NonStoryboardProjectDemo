@@ -52,6 +52,7 @@
 		ECB690071F0916B700192BBF /* UIViewControllerProtcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB690061F0916B700192BBF /* UIViewControllerProtcol.swift */; };
 		ECE154FD1F187D6200E8B084 /* RestaurantList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECE154FC1F187D6200E8B084 /* RestaurantList.storyboard */; };
 		ECE356721F122DDA0098B33D /* SearchRestaurantRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */; };
+		ECF9689D1F29C5D300520D9C /* Preheat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF9689C1F29C5D300520D9C /* Preheat.framework */; };
 		ECFD91D41F1C9AFA006D479C /* Nuke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD91D31F1C9AFA006D479C /* Nuke.framework */; };
 		ECFD91D61F1C9B0B006D479C /* NukeAlamofirePlugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECFD91D51F1C9B0B006D479C /* NukeAlamofirePlugin.framework */; };
 		ECFD91D71F1C9BDE006D479C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE851031F0E57E500B16014 /* Alamofire.framework */; };
@@ -138,6 +139,7 @@
 		ECE356711F122DDA0098B33D /* SearchRestaurantRequestParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRestaurantRequestParameters.swift; sourceTree = "<group>"; };
 		ECE851031F0E57E500B16014 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ECF5C2C61F1B1B350016EA5E /* AlamofireNetworkActivityIndicator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireNetworkActivityIndicator.framework; path = Carthage/Build/iOS/AlamofireNetworkActivityIndicator.framework; sourceTree = "<group>"; };
+		ECF9689C1F29C5D300520D9C /* Preheat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Preheat.framework; path = Carthage/Build/iOS/Preheat.framework; sourceTree = "<group>"; };
 		ECFD91D31F1C9AFA006D479C /* Nuke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nuke.framework; path = Carthage/Build/iOS/Nuke.framework; sourceTree = "<group>"; };
 		ECFD91D51F1C9B0B006D479C /* NukeAlamofirePlugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NukeAlamofirePlugin.framework; path = Carthage/Build/iOS/NukeAlamofirePlugin.framework; sourceTree = "<group>"; };
 		ECFD91D91F1C9BF5006D479C /* Build */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Build; path = Carthage/Build; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECF9689D1F29C5D300520D9C /* Preheat.framework in Frameworks */,
 				C6E33885EF0B3D3904BBA0BC /* Pods_NonStoryboardProjectDemo.framework in Frameworks */,
 				ECFD91D71F1C9BDE006D479C /* Alamofire.framework in Frameworks */,
 				ECFD91D81F1C9BED006D479C /* AlamofireImage.framework in Frameworks */,
@@ -190,6 +193,7 @@
 		1E2BDAFE95F1A295551F0747 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECF9689C1F29C5D300520D9C /* Preheat.framework */,
 				EC43E78A1F1E5405001B0ABB /* SDWebImage.framework */,
 				EC962D8E1F1E44FB002A1D2A /* Kingfisher.framework */,
 				ECFD91D91F1C9BF5006D479C /* Build */,
@@ -800,6 +804,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Preheat.framework",
 			);
 			outputPaths = (
 			);
@@ -1060,6 +1065,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = R82WJ5W3TV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NonStoryboardProjectDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NonStoryboardProjectDemo.net.NonStoryboardProjectDemoTests;
@@ -1076,6 +1085,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = R82WJ5W3TV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = NonStoryboardProjectDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NonStoryboardProjectDemo.net.NonStoryboardProjectDemoTests;

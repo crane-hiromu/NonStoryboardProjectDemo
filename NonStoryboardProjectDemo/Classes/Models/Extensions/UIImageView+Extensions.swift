@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 import AlamofireImage
 import Nuke
 //import NukeAlamofirePlugin
@@ -18,20 +17,16 @@ extension UIImageView {
     
     /// URLからUIImageViewを生成する(iOS Default)
     /// - parameter url: URL型
-    func setImageByDefault(with url: URL, completion: @escaping (UIImage) -> Void) {
-        let request = URLRequest(url: url)
+    func setImageByDefault(with url: URL) {
+        let start = NSDate()
+//        let request = URLRequest(url: url)
 
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if error == nil {
-                switch data {
-                case .some(let result):
-                    guard let image = UIImage(data: result) else { return }
-                    completion(image)
-                    
-                case .none(_):
-                    // デフォルトのイメージセット
-                    break
-                }
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            if error == nil, case .some(let result) = data, let image = UIImage(data: result) {
+                self?.image = image
+                
+                let elapsed = NSDate().timeIntervalSince(start as Date)
+                print(elapsed)
                 
             } else {
                 // デフォルトのイメージセット
@@ -43,15 +38,19 @@ extension UIImageView {
     /// URLからUIImageViewを生成する(AlamofireImage)
     /// - parameter url: URL型
     @discardableResult
-//    func setImageByAlamofire(with url: URL, placeholder: UIImage, completion: @escaping (UIImage) -> Void) {
-    func setImageByAlamofire(with url: URL, completion: @escaping (UIImage) -> Void) {
-        let request = URLRequest(url: url)
+    func setImageByAlamofire(with url: URL) {
+        let start = NSDate()
         
-//        af_setImage(withURLRequest: request, placeholderImage: placeholder, imageTransition: .flipFromBottom(1)) { response in
-        af_setImage(withURLRequest: request) { response in
+        let request = URLRequest(url: url)
+        af_setImage(withURLRequest: request, imageTransition: .flipFromTop(1)) { [weak self] response in
+        
+//        af_setImage(withURL: url) { [weak self] response in
             switch response.result {
             case .success(let result):
-                completion(result)
+                self?.image = result
+                
+                let elapsed = NSDate().timeIntervalSince(start as Date)
+                print(elapsed)
                 
             case .failure(_):
                 // デフォルトのイメージセット
@@ -63,19 +62,19 @@ extension UIImageView {
 
     /// URLからUIImageViewを生成する(Nuke)
     /// - parameter url: URL型
-    func setImageByNuke(with url: URL, completion: @escaping (UIImage) -> Void) {
-        let request = Request(url: url)
+    func setImageByNuke(with url: URL) {
+        let start = NSDate()
         
-        Nuke.Manager.shared.loadImage(with: request, into: self) { response, isResponse in
-            if isResponse {
-                switch response {
-                case .success(let result):
-                    completion(result)
-                    
-                case .failure(_):
-                    // デフォルトのイメージセット
-                    break
-                }
+        let request = Request(url: url)
+        Nuke.Manager.shared.loadImage(with: request, into: self) { [weak self] response, isResponse in
+        
+//        Nuke.Manager.shared.loadImage(with: url, into: self) { [weak self] response, isResponse in
+            if isResponse, case .success(let result) = response {
+                self?.image = result
+                
+                let elapsed = NSDate().timeIntervalSince(start as Date)
+                print(elapsed)
+                
             } else {
                 // デフォルトのイメージセット
             }
@@ -85,18 +84,19 @@ extension UIImageView {
     
     /// URLからUIImageViewを生成する(Kingfisher)
     /// - parameter urlString: URL(string型)
-    /// - parameter placeholder: デフォルトの画像（UIImage）
-    /// - parameter completion: コールバック関数
 //    func setImageByKingfisher(with url: URL, placeholder: UIImage, completion: @escaping (UIImage) -> Void) {
-    func setImageByKingfisher(with url: URL, completion: @escaping (UIImage) -> Void) {
+    func setImageByKingfisher(with url: URL) {
         
-//        kf.indicator?.startAnimatingView()
+        let start = NSDate()
         
         self.kf.setImage(with: url) { [weak self] image, error, _, _ in
             
             // Success
             if error == nil, let image = image {
-                completion(image)
+                self?.image = image
+                
+                let elapsed = NSDate().timeIntervalSince(start as Date)
+                print(elapsed)
                 
             // Failure
             } else {
@@ -104,20 +104,24 @@ extension UIImageView {
 //                completion(placeholder)
                 
             }
-//            self?.kf.indicator?.stopAnimatingView()
         }
         
     }
     
 
     /// URLからUIImageViewを生成する(SDWebImage)
-    func setImageBySDWebImage(with url: URL, completion: @escaping (UIImage) -> Void) {
+    func setImageBySDWebImage(with url: URL) {
         
-        self.sd_setImage(with: url) { image, error, _, _ in
+        let start = NSDate()
+        
+        self.sd_setImage(with: url) { [weak self] image, error, _, _ in
 
             // Success
             if error == nil, let image = image {
-                completion(image)
+                self?.image = image
+                
+                let elapsed = NSDate().timeIntervalSince(start as Date)
+                print(elapsed)
                 
             // Failure
             } else {

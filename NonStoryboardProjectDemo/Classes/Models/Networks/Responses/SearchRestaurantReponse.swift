@@ -11,43 +11,6 @@ import ObjectMapper
 
 /// 'ぐるなびAPI'のレスポンスのキー名をそのまま使用しているため、スネークケースのものがある
 class SearchRestaurantResponse: Mappable {
-    
-    var attributes: Attributes?
-    var hit_per_page: Int?
-    var page_offset: Int?
-    var rest: RestaurantInfomation?
-
-    // 以下、レスポンスには含まれない情報、アプリで管理するもの
-    var favoriteFlag: Bool = false
-    var wantToGoFlag: Bool = false // haveEnteredFlagがtrueの時は必ずfalseになる
-    var haveEnteredFlag: Bool = false
-
-    required convenience init?(map: Map) {
-        self.init()
-    }
-
-    func mapping(map: Map) {
-        attributes <- map["attributes"]
-        hit_per_page <- map["hit_per_page"]
-        page_offset <- map["page_offset"]
-        rest <- map["rest"]
-    }
-}
-
-class Attributes: Mappable {
-
-    var api_version: String?
-
-    required convenience init?(map: Map) {
-        self.init()
-    }
-    
-    func mapping(map: Map) {
-        api_version <- map["api_version"]
-    }
-}
-
-class RestaurantInfomation: Mappable {
     var id: String?
     var name: String?
     var latitude: Double?
@@ -62,6 +25,11 @@ class RestaurantInfomation: Mappable {
     var access: RestaurantAccess?
     var lunch: Int?
     var credit_card: String?
+    
+    // 以下、レスポンスには含まれない情報、アプリで管理するもの
+    var favoriteFlag: Bool = false
+    var wantToGoFlag: Bool = false // haveEnteredFlagがtrueの時は必ずfalseになる
+    var haveEnteredFlag: Bool = false
 
     required convenience init?(map: Map) {
         self.init()
